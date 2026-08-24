@@ -10,6 +10,8 @@ export function Header() {
   // (light-background) page adds `nav-on-light` so the black logo (.v2) shows.
   const pathname = usePathname();
   const navbarClass = pathname === "/" ? "navbar" : "navbar nav-on-light";
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
   return (
     <div className="header">
       <div className={navbarClass}>
@@ -24,19 +26,22 @@ export function Header() {
               </a>
               <div className="nav-item-wrap">
                 <div className="nav-main-menu-wrap">
-                  <a aria-current="page" className="menu-link" href="/">
+                  <a aria-current={isActive("/") ? "page" : undefined} className="menu-link" href="/">
                     Home
                   </a>
-                  <a className="menu-link" href="/about">
+                  <a aria-current={isActive("/about") ? "page" : undefined} className="menu-link" href="/about">
                     About
                   </a>
-                  <a className="menu-link" href="/products">
+                  <a aria-current={isActive("/products") ? "page" : undefined} className="menu-link" href="/products">
                     Products
                   </a>
-                  <a className="menu-link" href="/project">
+                  <a aria-current={isActive("/project") ? "page" : undefined} className="menu-link" href="/project">
                     Projects
                   </a>
-                  <a className="menu-link" href="/contact">
+                  <a aria-current={isActive("/blog") ? "page" : undefined} className="menu-link" href="/blog">
+                    Guides
+                  </a>
+                  <a aria-current={isActive("/contact") ? "page" : undefined} className="menu-link" href="/contact">
                     Contact
                   </a>
                 </div>
@@ -83,7 +88,7 @@ export function Header() {
           <div className="nav-menu-all-wrap">
             <div className="nav-menu-wrap">
               <div className="single-nav-menu">
-                <a aria-current="page" className="nav-link-wrap inline-block" href="/">
+                <a aria-current={isActive("/") ? "page" : undefined} className="nav-link-wrap inline-block" href="/">
                   <div className="nav-link-texts">
                     <div className="nav-link-text">
                       HOME
@@ -101,7 +106,7 @@ export function Header() {
                 </div>
               </div>
               <div className="single-nav-menu">
-                <a className="nav-link-wrap inline-block" href="/about">
+                <a aria-current={isActive("/about") ? "page" : undefined} className="nav-link-wrap inline-block" href="/about">
                   <div className="nav-link-texts">
                     <div className="nav-link-text">ABOUT</div>
                     <div className="nav-link-text">ABOUT</div>
@@ -113,7 +118,7 @@ export function Header() {
                 </div>
               </div>
               <div className="single-nav-menu">
-                <a className="nav-link-wrap inline-block" href="/products">
+                <a aria-current={isActive("/products") ? "page" : undefined} className="nav-link-wrap inline-block" href="/products">
                   <div className="nav-link-texts">
                     <div className="nav-link-text">PRODUCTS</div>
                     <div className="nav-link-text">PRODUCTS</div>
@@ -125,7 +130,7 @@ export function Header() {
                 </div>
               </div>
               <div className="single-nav-menu">
-                <a className="nav-link-wrap inline-block" href="/project">
+                <a aria-current={isActive("/project") ? "page" : undefined} className="nav-link-wrap inline-block" href="/project">
                   <div className="nav-link-texts">
                     <div className="nav-link-text">PROJECTS</div>
                     <div className="nav-link-text">PROJECTS</div>
@@ -137,7 +142,19 @@ export function Header() {
                 </div>
               </div>
               <div className="single-nav-menu">
-                <a className="nav-link-wrap inline-block" href="/contact">
+                <a aria-current={isActive("/blog") ? "page" : undefined} className="nav-link-wrap inline-block" href="/blog">
+                  <div className="nav-link-texts">
+                    <div className="nav-link-text">GUIDES</div>
+                    <div className="nav-link-text">GUIDES</div>
+                  </div>
+                </a>
+                <div className="nav-border">
+                  <div className="blog-card-divider" />
+                  <div className="blog-card-divider-hover" />
+                </div>
+              </div>
+              <div className="single-nav-menu">
+                <a aria-current={isActive("/contact") ? "page" : undefined} className="nav-link-wrap inline-block" href="/contact">
                   <div className="nav-link-texts">
                     <div className="nav-link-text">
                       CONTACT

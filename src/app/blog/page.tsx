@@ -1,102 +1,136 @@
+import type { Metadata } from "next";
 import { getBlogPosts } from "@/lib/content";
 
-// Nuvora template — blog index. Hero + category chips mirror the original design;
-// the grid is generated from the blog content collection (src/content/blog/*.mdx).
-// The chips filter cards by `data-cat` via NuvoraScripts (initBlogFilter).
-const CATEGORIES: { label: string; filter: string }[] = [
-  { label: "All", filter: "all" },
-  { label: "Architect", filter: "architect" },
-  { label: "Design", filter: "design" },
-  { label: "Interior", filter: "interior" },
+export const metadata: Metadata = {
+  title: "Window Furnishing Guides",
+  description:
+    "Practical guides for choosing blinds, curtains and shutters for better light, privacy and comfort.",
+};
+
+const CATEGORIES = [
+  { label: "All guides", filter: "all" },
+  { label: "Blinds", filter: "blinds" },
+  { label: "Curtains", filter: "curtains" },
+  { label: "Shutters", filter: "shutters" },
+  { label: "Smart living", filter: "smart" },
 ];
 
 export default function BlogPage() {
   const posts = getBlogPosts();
+  const featuredPost = posts[0];
+
   return (
-    <>
-      <section className="section inner-hero">
-        <div className="container">
-          <div className="inner-title-wrap blog-hero">
-            <div className="inner-title-box is-blog reveal">
-              <h1 className="hero-white-title">
-                Smart features and ideas
-                <span className="italic none">that we have explored for you</span>
-              </h1>
-            </div>
-            <div className="inner-button-box reveal">
-              <a className="primary-button inline-block" href="/contact">
-                <div className="primary-button-content">
-                  <div className="primary-button-text-wrap">
-                    <div className="primary-button-text">GET CONSULTATION</div>
-                    <div className="primary-button-hover-text">GET CONSULTATION</div>
-                  </div>
-                </div>
-              </a>
+    <main className="guides-page">
+      <section className="guides-hero" aria-labelledby="guides-title">
+        <div className="guides-shell guides-hero-grid">
+          <div className="guides-hero-content reveal">
+            <p className="guides-eyebrow">INTERIOR BLINDS &amp; SHUTTERS JOURNAL</p>
+            <h1 id="guides-title" className="hero-white-title home-hero-title">
+              Better light starts with
+              <em>better choices.</em>
+            </h1>
+            <p className="guides-hero-copy">
+              Clear, practical advice to help you choose window furnishings that
+              feel right, perform beautifully and suit the way you live.
+            </p>
+            <a className="guides-hero-link" href="#all-guides">
+              Explore the guides <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <div className="guides-hero-media reveal">
+            <img
+              alt="Soft daylight filtering through beautifully fitted window furnishings"
+              src="/assets/styled-windows/background.webp"
+            />
+            <div className="guides-hero-note">
+              <span>01</span>
+              <p>Advice for brighter, calmer and more comfortable rooms.</p>
             </div>
           </div>
         </div>
-        <div className="visual-wrap">
-          <img
-            alt=""
-            className="visual"
-            loading="lazy"
-            sizes="(max-width: 5760px) 100vw, 5760px"
-            src="/assets/images/Project-Banner-Image.webp"
-            srcSet="/assets/images/Project-Banner-Image-p-500.webp 500w, /assets/images/Project-Banner-Image-p-800.webp 800w, /assets/images/Project-Banner-Image-p-1080.webp 1080w, /assets/images/Project-Banner-Image-p-1600.webp 1600w, /assets/images/Project-Banner-Image-p-2000.webp 2000w, /assets/images/Project-Banner-Image-p-2600.webp 2600w, /assets/images/Project-Banner-Image-p-3200.webp 3200w, /assets/images/Project-Banner-Image.webp 5760w"
-          />
-          <div className="visual-overlay" />
-        </div>
       </section>
-      <section className="section blog">
-        <div className="container">
-          <div className="blog-inner-wrap">
-            <div className="catagory-box-wrap reveal">
-              <div>
-                <div className="catagory-collection-list" role="list">
-                  {CATEGORIES.map((c, i) => (
-                    <a
-                      key={c.filter}
-                      className="catagory-button"
-                      data-filter={c.filter}
-                      {...(i === 0 ? { "aria-current": "page" } : {})}
-                    >
-                      {c.label}
-                    </a>
-                  ))}
-                </div>
+
+      {featuredPost ? (
+        <section className="guides-featured">
+          <div className="guides-shell">
+            <a className="guides-featured-card reveal" href={`/blog/${featuredPost.slug}`}>
+              <div className="guides-featured-image">
+                <img alt={featuredPost.title} src={featuredPost.heroImage} />
               </div>
-            </div>
+              <div className="guides-featured-content">
+                <p className="guides-card-category">FEATURED GUIDE · {featuredPost.readTime}</p>
+                <h2>{featuredPost.title}</h2>
+                <p>
+                  Start with the room, the direction of the light and the comfort you
+                  want—then choose the finish that brings it all together.
+                </p>
+                <span className="guides-read-link">Read the guide <b aria-hidden="true">↗</b></span>
+              </div>
+            </a>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="guides-library" id="all-guides" aria-labelledby="all-guides-title">
+        <div className="guides-shell">
+          <div className="guides-library-heading reveal">
             <div>
-              <div className="inner-blog-grid" role="list">
-                {posts.map((post) => (
-                  <div data-cat={post.category} role="listitem" key={post.slug}>
-                    <div className="blog-card reveal">
-                      <a className="blog-image-box inline-block" href={`/blog/${post.slug}`}>
-                        <img alt="Blog Image" className="blog-image" loading="lazy" src={post.cardImage} />
-                      </a>
-                      <a
-                        aria-label="Blog Link"
-                        className="blog-card-title-box inline-block"
-                        href={`/blog/${post.slug}`}
-                      >
-                        <h2 className="blog-card-title">{post.title}</h2>
-                      </a>
-                      <div className="blog-author-box">
-                        <div className="blog-author-name">{post.author}</div>
-                        <div className="blog-author-date">{post.date}</div>
-                      </div>
-                      <div className="blog-card-divider-wrap">
-                        <div className="blog-card-divider" style={{ width: "100%" }} />
-                        <div className="blog-card-divider-hover" style={{ width: "0%" }} />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="guides-eyebrow">PRACTICAL ADVICE, MADE SIMPLE</p>
+              <h2 id="all-guides-title">Guides for every window.</h2>
             </div>
+            <p>
+              Compare materials, understand light control and plan your rooms with
+              confidence before your free in-home measure.
+            </p>
+          </div>
+
+          <div className="guides-filters reveal" aria-label="Filter guides">
+            {CATEGORIES.map((category, index) => (
+              <button
+                className="catagory-button guides-filter"
+                data-filter={category.filter}
+                key={category.filter}
+                type="button"
+                {...(index === 0 ? { "aria-current": "page" as const } : {})}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="guides-grid" role="list">
+            {posts.map((post, index) => (
+              <article className="guides-card reveal" data-cat={post.category} key={post.slug} role="listitem">
+                <a className="guides-card-image" href={`/blog/${post.slug}`}>
+                  <img alt={post.title} loading="lazy" src={post.cardImage} />
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                </a>
+                <div className="guides-card-meta">
+                  <span className="guides-card-category">{post.category}</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3>
+                  <a href={`/blog/${post.slug}`}>{post.title}</a>
+                </h3>
+                <a className="guides-read-link" href={`/blog/${post.slug}`}>
+                  Read guide <b aria-hidden="true">↗</b>
+                </a>
+              </article>
+            ))}
           </div>
         </div>
       </section>
-    </>
+
+      <section className="guides-cta">
+        <div className="guides-shell guides-cta-inner reveal">
+          <div>
+            <p className="guides-eyebrow">NEED ADVICE FOR YOUR HOME?</p>
+            <h2 className="hero-white-title home-hero-title" >Let’s find the right fit.</h2>
+          </div>
+          <p>We’ll bring the samples, measure your windows and help you compare the best options in your space.</p>
+          <a href="/contact">Book a free measure <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
   );
 }
