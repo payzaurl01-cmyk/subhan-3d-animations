@@ -229,6 +229,17 @@ export function HomeQuoteSection() {
                   )}
                 </div>
               </div>
+              <div className="home-quote-field home-quote-description-field">
+                <label htmlFor="home-quote-description">Description</label>
+                <textarea
+                  id="home-quote-description"
+                  maxLength={2000}
+                  name="description"
+                  placeholder="Tell us about your windows and what you need"
+                  required
+                  rows={5}
+                />
+              </div>
 
               <button className="home-quote-submit" disabled={isSubmitting} type="submit">
                 {isSubmitting ? "SENDING..." : "BOOK FREE MEASURE"}

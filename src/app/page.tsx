@@ -146,7 +146,7 @@ export default function HomePage() {
             </section>
             <section className="section window-story" aria-labelledby="window-story-title">
               <div className="container">
-                <div className="window-story-intro">
+                <div className="window-story-intro" hidden>
                   <div className="window-story-reveal reveal">
                     <figure className="window-story-media window-story-media-main" data-story-depth="34">
                       <div className="window-story-image-viewport">
@@ -240,7 +240,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="window-story-projects">
+                <div className="window-story-projects" hidden>
                   <div className="window-story-project-heading">
                     <div>
                       {/* <p className="window-story-kicker reveal">INSTALLED PROJECT SHOWCASE</p> */}
@@ -787,10 +787,10 @@ export default function HomePage() {
                       <a className="primary-button inline-block" href="/blog">
                         <div className="primary-button-text-wrap">
                           <div className="primary-button-text">
-                            VIEW BLOGS
+                            EXPLORE GUIDES
                           </div>
                           <div className="primary-button-hover-text">
-                            VIEW BLOGS
+                            EXPLORE GUIDES
                           </div>
                         </div>
                       </a>

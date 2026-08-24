@@ -24,6 +24,7 @@ export async function POST(request: Request) {
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
       !/^\d{4}$/.test(postcode) ||
       !VALID_SERVICES.has(service) ||
+      !description ||
       description.length > 2000
     ) {
       return Response.json(
