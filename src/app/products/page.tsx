@@ -4,7 +4,7 @@ import ProductExplorer from "./product-explorer";
 export const metadata: Metadata = {
   title: "Made-to-Measure Window Furnishings",
   description:
-    "Explore our curtains, blinds, shutters, Curvers and flyscreens in one interactive made-to-measure collection.",
+    "Explore our blinds, curtains, shutters and flyscreens in one interactive made-to-measure collection.",
 };
 
 export default async function ProductsPage({

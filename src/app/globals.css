@@ -2502,6 +2502,15 @@ html {
   color: rgba(6, 27, 58, .75);
 }
 
+.product-type-heading {
+  width: fit-content;
+  padding: 7px 11px;
+  border: 1px solid rgba(23, 104, 242, .16);
+  border-radius: 999px;
+  background: #f3f7ff;
+  color: var(--product-blue);
+}
+
 .product-type-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2557,6 +2566,10 @@ html {
 .product-type-grid button.is-active strong,
 .product-type-grid button.is-active span {
   color: var(--product-blue);
+}
+
+.product-secondary-type {
+  margin-top: 18px;
 }
 
 .product-detail-card {
@@ -3837,6 +3850,29 @@ html {
   }
 }
 
+@media (max-width: 1180px) {
+  .header .navbar .hamburger-menu.open {
+    flex: 0 0 46px;
+    width: 46px;
+    min-height: 46px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .header .navbar .hamburger-text {
+    display: none;
+  }
+
+  .header .navbar .hamburger-icon.v1 {
+    display: none;
+  }
+
+  .header .navbar .hamburger-icon.v2 {
+    display: block;
+    filter: none;
+  }
+}
+
 @media (max-width: 991px) {
   .header .navbar,
   .header .navbar.nav-on-light {
@@ -3848,8 +3884,24 @@ html {
   }
 
   .header .navbar-wrapper {
+    gap: 12px;
     min-height: 64px;
     padding: 7px 8px 7px 12px;
+  }
+
+  .header .navbar .nav-content-wrap {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .header .navbar .nav-logo-wrap {
+    min-width: 0;
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .header .navbar .site-brand {
+    max-width: 100%;
   }
 
   .header .navbar .site-brand-image {
@@ -3858,7 +3910,9 @@ html {
   }
 
   .header .navbar .site-brand-text {
+    overflow: hidden;
     font-size: 17px;
+    text-overflow: ellipsis;
   }
 }
 
@@ -3887,17 +3941,16 @@ html {
   }
 
   .header .navbar .site-brand-text {
-    max-width: 168px;
-    overflow: hidden;
     font-size: 14px;
     line-height: 1.05;
-    white-space: normal;
+    white-space: nowrap;
   }
 
   .header .navbar .hamburger-menu.open {
+    flex-basis: 42px;
+    width: 42px;
     min-height: 42px;
-    gap: 6px;
-    padding: 8px 10px 8px 13px;
+    padding: 0;
   }
 
   .header .navbar .hamburger-icon {

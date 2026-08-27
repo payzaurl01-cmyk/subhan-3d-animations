@@ -4,7 +4,7 @@ import { ProjectGallery } from "@/components/project-gallery";
 
 export const metadata: Metadata = {
   title: "Our Projects",
-  description: "Explore our made-to-measure blinds, curtains and styled window installations across Sydney.",
+  description: "Explore our made-to-measure blinds, curtains, shutters and flyscreen installations across Sydney.",
 };
 
 export default function ProjectPage() {
