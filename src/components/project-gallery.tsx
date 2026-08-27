@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
-type Category = "Roller Blinds" | "Curtains" | "Motorised" | "Styled Windows";
+type Category = "Blinds" | "Curtains" | "Shutters" | "Flyscreens";
 
 type GalleryProject = {
   title: string;
@@ -15,27 +15,27 @@ type GalleryProject = {
 
 const projects: GalleryProject[] = [
   { title: "Soft Light Living", location: "Sydney, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.47.jpeg", shape: "landscape" },
-  { title: "Tailored Corner Finish", location: "North Sydney, NSW", category: "Roller Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.52%20(1).jpeg", shape: "landscape" },
+  { title: "Tailored Corner Finish", location: "North Sydney, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.52%20(1).jpeg", shape: "landscape" },
   { title: "Floor-to-Ceiling Privacy", location: "Parramatta, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.52.jpeg", shape: "tall" },
-  { title: "Calm Bedroom Retreat", location: "Chatswood, NSW", category: "Roller Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.53.jpeg", shape: "portrait" },
-  { title: "Clean Architectural Lines", location: "Ryde, NSW", category: "Motorised", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.54%20(2).jpeg", shape: "tall" },
+  { title: "Calm Bedroom Retreat", location: "Chatswood, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.53.jpeg", shape: "portrait" },
+  { title: "Clean Architectural Lines", location: "Ryde, NSW", category: "Shutters", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.54%20(2).jpeg", shape: "tall" },
   { title: "Warm Neutral Layers", location: "Penrith, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.54.jpeg", shape: "portrait" },
-  { title: "Effortless Light Control", location: "Castle Hill, NSW", category: "Motorised", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.55%20(1).jpeg", shape: "tall" },
-  { title: "Private Family Living", location: "Kellyville, NSW", category: "Roller Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.55%20(2).jpeg", shape: "portrait" },
+  { title: "Effortless Light Control", location: "Castle Hill, NSW", category: "Shutters", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.55%20(1).jpeg", shape: "tall" },
+  { title: "Private Family Living", location: "Kellyville, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.55%20(2).jpeg", shape: "portrait" },
   { title: "A Softer Outlook", location: "Hills District, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.55.jpeg", shape: "portrait" },
-  { title: "Modern Window Detail", location: "Blacktown, NSW", category: "Roller Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.48.jpeg", shape: "tall" },
-  { title: "Quiet Comfort", location: "Baulkham Hills, NSW", category: "Motorised", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.49%20(1).jpeg", shape: "portrait" },
+  { title: "Modern Window Detail", location: "Blacktown, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.48.jpeg", shape: "tall" },
+  { title: "Quiet Comfort", location: "Baulkham Hills, NSW", category: "Shutters", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.49%20(1).jpeg", shape: "portrait" },
   { title: "Layered Daylight", location: "Wentworthville, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.49%20(2).jpeg", shape: "portrait" },
-  { title: "Made for the Room", location: "Western Sydney, NSW", category: "Roller Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.49.jpeg", shape: "tall" },
+  { title: "Made for the Room", location: "Western Sydney, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.49.jpeg", shape: "tall" },
   { title: "Open-Plan Elegance", location: "Sydney, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.50.jpeg", shape: "landscape" },
-  { title: "Motorised Bedroom Blinds", location: "Sydney, NSW", category: "Motorised", image: "/assets/styled-windows/motorised-blinds.webp", shape: "tall" },
-  { title: "Cooler, Calmer Rooms", location: "Sydney, NSW", category: "Styled Windows", image: "/assets/styled-windows/cooler-rooms.webp", shape: "tall" },
-  { title: "Privacy, Beautifully Done", location: "Sydney, NSW", category: "Styled Windows", image: "/assets/styled-windows/more-privacy.webp", shape: "tall" },
-  { title: "Balanced Natural Light", location: "Sydney, NSW", category: "Styled Windows", image: "/assets/styled-windows/better-light-control.webp", shape: "tall" },
-  { title: "A Complete Window Story", location: "Sydney, NSW", category: "Styled Windows", image: "/assets/styled-windows/background.webp", shape: "landscape" },
+  { title: "Motorised Bedroom Blinds", location: "Sydney, NSW", category: "Shutters", image: "/assets/styled-windows/motorised-blinds.webp", shape: "tall" },
+  { title: "Cooler, Calmer Rooms", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/styled-windows/cooler-rooms.webp", shape: "tall" },
+  { title: "Privacy, Beautifully Done", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/styled-windows/more-privacy.webp", shape: "tall" },
+  { title: "Balanced Natural Light", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/styled-windows/better-light-control.webp", shape: "tall" },
+  { title: "A Complete Window Story", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/styled-windows/background.webp", shape: "landscape" },
 ];
 
-const categories = ["All", "Roller Blinds", "Curtains", "Motorised", "Styled Windows"] as const;
+const categories = ["All", "Blinds", "Curtains", "Shutters", "Flyscreens"] as const;
 
 export function ProjectGallery() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
