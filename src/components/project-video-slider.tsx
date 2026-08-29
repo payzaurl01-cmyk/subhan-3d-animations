@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const PROJECT_VIDEOS = [
+export const PROJECT_VIDEOS = [
   {
     src: "/assets/WhatsApp%20Video%202026-08-20%20at%2012.56.06.mp4",
     title: "Made-to-measure finish",

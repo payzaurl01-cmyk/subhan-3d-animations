@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import { ImageLoadingManager } from "@/components/image-loading-manager";
 import { SiteShell } from "@/components/layout/site-shell";
 
 export const metadata: Metadata = {
@@ -50,6 +51,7 @@ export default function RootLayout({
 </head>
 
       <body>
+        <ImageLoadingManager />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
