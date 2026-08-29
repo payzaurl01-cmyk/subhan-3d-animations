@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { BeforeAfterSlider } from "@/components/before-after-slider";
 import { ProjectGallery } from "@/components/project-gallery";
 
 export const metadata: Metadata = {
@@ -36,15 +36,7 @@ export default function ProjectPage() {
               <h2 className="hero-white-title "> Made for the way you live.</h2>
               <span>From soft filtered daylight to complete privacy, every detail is chosen to make the room feel calmer, more comfortable and beautifully finished.</span>
             </div>
-            <div className="all-projects-feature-images">
-              <div className="all-projects-feature-image">
-                <Image alt="Bright room before its custom window treatment" fill quality={78} sizes="(max-width: 991px) 50vw, 36vw" src="/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.47.jpeg" />
-              </div>
-              <div className="all-projects-feature-image">
-                <Image alt="Finished window with a tailored treatment" fill quality={78} sizes="(max-width: 991px) 50vw, 36vw" src="/assets/styled-windows/background.webp" />
-              </div>
-              <span aria-hidden="true">↔</span>
-            </div>
+            <BeforeAfterSlider />
           </div>
         </div>
       </section>
