@@ -140,7 +140,7 @@ export function Footer() {
 
       <div className="footer-bottom-box">
         <div className="footer-bottom-content">
-          © 2026 Interior Blinds &amp; Shutters. All rights reserved. || Powered By GO2X
+          © 2026 Interior Blinds &amp; Shutters. All rights reserved.
         </div>
       </div>
     </section>

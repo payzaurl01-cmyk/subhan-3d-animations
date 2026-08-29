@@ -64,6 +64,14 @@ export default function ContactPage() {
                         info@interiorblindsandshutters.com.au
                       </a>
                     </div>
+                    <div className="contact-card reveal">
+                      <div className="primary-text-regular">
+                        ADDRESS
+                      </div>
+                      <a className="primary-text-regular text-primary" href="mailto:info@interiorblindsandshutters.com.au">
+                        9 Muir Road Edmondson Park, NSW 2174
+                      </a>
+                    </div>
                   </div>
                   <div className="contact-right-box reveal">
                     <div className="form-block">

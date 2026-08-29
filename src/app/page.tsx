@@ -521,7 +521,7 @@ export default function HomePage() {
                 </div>
               </div>
             </section>
-            <section className="section testimonial">
+            {/* <section className="section testimonial">
               <div className="container">
                 <div className="testimonial-section-title reveal">
                   <h2 className="inner-title is-testimonial">
@@ -628,7 +628,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </section>
+            </section> */}
             <section className="section benefit">
               <div className="container">
                 <div className="benefit-layout">

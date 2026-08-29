@@ -2797,12 +2797,36 @@ html {
   }
 
   .product-selection-panel {
-    gap: 29px;
+    gap: 0;
     padding-top: 24px;
   }
 
+  /* Keep the desktop split layout, but place the selected image between the
+     product controls and its details on mobile. */
+  .product-showcase-content {
+    display: contents;
+  }
+
+  .product-panel-intro {
+    order: 1;
+  }
+
+  .product-type-wrap {
+    order: 2;
+  }
+
   .product-showcase-media {
+    order: 3;
+    margin-top: 24px;
     border-radius: 15px;
+  }
+
+  .product-detail-card {
+    order: 4;
+  }
+
+  .product-showcase-actions {
+    order: 5;
   }
 
   .product-image-badge {
@@ -2810,10 +2834,6 @@ html {
     bottom: 14px;
     padding: 9px 12px;
     font-size: 10px;
-  }
-
-  .product-showcase-content {
-    padding-top: 0;
   }
 
   .product-panel-intro {
