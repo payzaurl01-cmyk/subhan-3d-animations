@@ -151,7 +151,7 @@ export function ContactQuoteForm() {
                 .slice(0, 4);
             }}
             pattern="[0-9]{4}"
-            placeholder="3000"
+            placeholder="2000"
             required
             title="Enter a 4-digit Australian postcode"
             type="text"
