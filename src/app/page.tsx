@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HomeQuoteSection } from "@/components/home-quote-section";
 import { ProjectVideoSlider } from "@/components/project-video-slider";
 
@@ -7,7 +8,7 @@ export default function HomePage() {
       <section className="section hero-background">
         <div className="container">
           <div className="hero-wrap hero-home-wrap">
-            <div className="hero-home-content reveal">
+            <div className="hero-home-content">
               <h1 className="hero-white-title home-hero-title">
                 <span>Beautiful light.</span>
                 <span>Better privacy.</span>
@@ -32,7 +33,7 @@ export default function HomePage() {
               </div>
 
             </div>
-            <div className="hero-home-bottom reveal">
+            <div className="hero-home-bottom">
               <div className="hero-stats-card">
                 <div className="hero-stat">
                   <span className="hero-stat-value">4.9</span>
@@ -58,10 +59,11 @@ export default function HomePage() {
             loop
             muted
             playsInline
-            poster="/assets/pic1.png"
+            poster="/assets/hero-poster.webp"
             preload="metadata"
           >
-            <source src="/assets/hero-video.mp4" type="video/mp4" />
+            <source media="(max-width: 767px)" src="/assets/hero-video-mobile.m4v" type="video/mp4" />
+            <source src="/assets/hero-video-720.m4v" type="video/mp4" />
           </video>
           <div className="visual-overlay hero-overlay" />
         </div>
@@ -81,7 +83,7 @@ export default function HomePage() {
                   </div>
                   <div className="window-collection-grid">
                     <a className="window-product-card reveal" href="/product/roller-blinds">
-                      <img alt="Roller blinds installed in a bright window" className="window-product-image" decoding="async" height="1254" loading="lazy" src="/assets/productstoWEBP/roller%20blinds%20blockout_1.webp" width="1254" />
+                      <Image alt="Roller blinds installed in a bright window" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/productstoWEBP/roller%20blinds%20blockout_1.webp" width={1254} />
                       <span className="window-card-number">01</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
                       <span className="window-card-content">
@@ -90,7 +92,7 @@ export default function HomePage() {
                       </span>
                     </a>
                     <a className="window-product-card reveal" href="/product/blockout-curtains">
-                      <img alt="Light filtering roller blinds softly diffusing daylight" className="window-product-image" decoding="async" height="1254" loading="lazy" src="/assets/productstoWEBP/vertical%20blinds%202.webp" width="1254" />
+                      <Image alt="Light filtering roller blinds softly diffusing daylight" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/productstoWEBP/vertical%20blinds%202.webp" width={1254} />
                       <span className="window-card-number">02</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
                       <span className="window-card-content">
@@ -99,7 +101,7 @@ export default function HomePage() {
                       </span>
                     </a>
                     <a className="window-product-card reveal" href="/product/pvc-plantation-shutters">
-                      <img alt="Dark blockout roller blinds in a modern room" className="window-product-image" decoding="async" height="1254" loading="lazy" src="/assets/productstoWEBP/blockout curtains.webp" width="1254" />
+                      <Image alt="Dark blockout roller blinds in a modern room" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/productstoWEBP/blockout curtains.webp" width={1254} />
                       <span className="window-card-number">03</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
                       <span className="window-card-content">
@@ -108,7 +110,7 @@ export default function HomePage() {
                       </span>
                     </a>
                     <a className="window-product-card reveal" href="/product/curvers">
-                      <img alt="Large roller blinds fitted across sliding doors" className="window-product-image" decoding="async" height="1254" loading="lazy" src="/assets/productstoWEBP/pvc plantataion shutters.webp" width="1254" />
+                      <Image alt="Large roller blinds fitted across sliding doors" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/productstoWEBP/pvc plantataion shutters.webp" width={1254} />
                       <span className="window-card-number">04</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
                       <span className="window-card-content">
@@ -117,7 +119,7 @@ export default function HomePage() {
                       </span>
                     </a>
                     <a className="window-product-card reveal" href="/product/vertical-blinds">
-                      <img alt="Custom fitted cassette blinds in a bright bedroom" className="window-product-image" decoding="async" height="1254" loading="lazy" src="/assets/luxxshade.jpeg" width="1254" />
+                      <Image alt="Custom fitted cassette blinds in a bright bedroom" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/luxxshade.jpeg" width={1254} />
                       <span className="window-card-number">05</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
                       <span className="window-card-content">
@@ -126,7 +128,7 @@ export default function HomePage() {
                       </span>
                     </a>
                     <a className="window-product-card reveal" href="/product/flyscreens">
-                      <img alt="Blinds fitted across a large outdoor-facing doorway" className="window-product-image" decoding="async" height="1254" loading="lazy" src="/assets/flyscreen.jpeg" width="1254" />
+                      <Image alt="Blinds fitted across a large outdoor-facing doorway" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/flyscreen.jpeg" width={1254} />
                       <span className="window-card-number">06</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
                       <span className="window-card-content">
@@ -155,7 +157,7 @@ export default function HomePage() {
                           className="window-story-image"
                           decoding="async"
                           height="1066"
-
+                          loading="lazy"
                           src="/assets/about%20pic%20folder/story-main.webp"
                           width="1600"
                         />
@@ -221,20 +223,20 @@ export default function HomePage() {
                   <div className="window-story-brand-row reveal" aria-label="Trusted material brands">
                     <div className="window-story-brand-track">
                       <div className="window-story-brand-group">
-                        <img alt="Shaw Performance Products" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/1.png" width="300" />
-                        <img alt="Alpha Furnishing Motorization" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/2.png" width="300" />
-                        <img alt="Louvolite" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/3.png" width="300" />
-                        <img alt="Texstyle" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/4.png" width="300" />
-                        <img alt="Vertex Fabrics" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/5.png" width="300" />
-                        <img alt="Nettex Interior Textiles" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/6.png" width="300" />
+                        <img alt="Shaw Performance Products" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/1.png" width="300" />
+                        <img alt="Alpha Furnishing Motorization" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/2.png" width="300" />
+                        <img alt="Louvolite" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/3.png" width="300" />
+                        <img alt="Texstyle" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/4.png" width="300" />
+                        <img alt="Vertex Fabrics" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/5.png" width="300" />
+                        <img alt="Nettex Interior Textiles" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/6.png" width="300" />
                       </div>
                       <div className="window-story-brand-group" aria-hidden="true">
-                        <img alt="" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/1.png" width="300" />
-                        <img alt="" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/2.png" width="300" />
-                        <img alt="" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/3.png" width="300" />
-                        <img alt="" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/4.png" width="300" />
-                        <img alt="" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/5.png" width="300" />
-                        <img alt="" className="window-story-brand-logo" height="100" src="/assets/brand%20logos/6.png" width="300" />
+                        <img alt="" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/1.png" width="300" />
+                        <img alt="" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/2.png" width="300" />
+                        <img alt="" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/3.png" width="300" />
+                        <img alt="" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/4.png" width="300" />
+                        <img alt="" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/5.png" width="300" />
+                        <img alt="" className="window-story-brand-logo" height="100" loading="lazy" src="/assets/brand%20logos/6.png" width="300" />
                       </div>
                     </div>
                   </div>
@@ -262,7 +264,7 @@ export default function HomePage() {
                             className="window-story-image"
                             decoding="async"
                             height="1600"
-
+                            loading="lazy"
                             src="/assets/about%20pic%20folder/story-showcase.webp"
                             width="1200"
                           />
@@ -282,7 +284,7 @@ export default function HomePage() {
                               className="window-story-image"
                               decoding="async"
                               height="1359"
-
+                              loading="lazy"
                               src="/assets/about%20pic%20folder/story-light.webp"
                               width="900"
                             />
@@ -301,7 +303,7 @@ export default function HomePage() {
                               className="window-story-image"
                               decoding="async"
                               height="1091"
-
+                              loading="lazy"
                               src="/assets/about%20pic%20folder/story-detail.webp"
                               width="900"
                             />

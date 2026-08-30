@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: [{ url: "/assets/logo.jpeg", type: "image/png" }],
-    shortcut: [{ url: "/assets/logo.jpeg", type: "image/png" }],
-    apple: [{ url: "/assets/logo.jpeg", type: "image/png" }],
+    icon: [{ url: "/assets/logo-96.webp", type: "image/webp" }],
+    shortcut: [{ url: "/assets/logo-96.webp", type: "image/webp" }],
+    apple: [{ url: "/assets/logo-96.webp", type: "image/webp" }],
   },
 };
 
@@ -45,11 +45,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="js">
-     <head>
-  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-</head>
-
+      <head>
+        <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+      </head>
       <body>
         <ImageLoadingManager />
         <SiteShell>{children}</SiteShell>

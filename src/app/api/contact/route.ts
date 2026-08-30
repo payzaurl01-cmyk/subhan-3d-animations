@@ -1,3 +1,4 @@
+import { after } from "next/server";
 import { serviceOptions } from "@/components/service-options";
 
 const VALID_SERVICES = new Set(serviceOptions.map(({ value }) => value));
@@ -88,34 +89,36 @@ export async function POST(request: Request) {
   const supabaseKey = process.env.SUPABASE_SECRET_KEY;
 
   if (supabaseUrl && supabaseKey) {
-    try {
-      const supabaseResponse = await fetch(
-        `${supabaseUrl}/rest/v1/contact_messages`,
-        {
-          method: "POST",
-          headers: {
-            apikey: supabaseKey,
-            "Content-Type": "application/json",
-            Prefer: "return=minimal",
-          },
-          body: JSON.stringify({
-            name: fullName,
-            email,
-            phone,
-            message: `Postcode: ${postcode}\nService: ${service}\nDescription: ${description}`,
-          }),
-          cache: "no-store",
-        }
-      );
+    after(async () => {
+      try {
+        const supabaseResponse = await fetch(
+          `${supabaseUrl}/rest/v1/contact_messages`,
+          {
+            method: "POST",
+            headers: {
+              apikey: supabaseKey,
+              "Content-Type": "application/json",
+              Prefer: "return=minimal",
+            },
+            body: JSON.stringify({
+              name: fullName,
+              email,
+              phone,
+              message: `Postcode: ${postcode}\nService: ${service}\nDescription: ${description}`,
+            }),
+            cache: "no-store",
+          }
+        );
 
-      if (!supabaseResponse.ok) {
-        console.error("Supabase backup rejected a contact submission.", {
-          status: supabaseResponse.status,
-        });
+        if (!supabaseResponse.ok) {
+          console.error("Supabase backup rejected a contact submission.", {
+            status: supabaseResponse.status,
+          });
+        }
+      } catch (error) {
+        console.error("Supabase backup request failed.", error);
       }
-    } catch (error) {
-      console.error("Supabase backup request failed.", error);
-    }
+    });
   }
 
   return Response.json({ success: true });

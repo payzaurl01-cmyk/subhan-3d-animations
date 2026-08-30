@@ -14,7 +14,7 @@ export function LegalPage({
       <section className="section inner-hero legal-hero">
         <div className="container">
           <div className="inner-title-wrap inner-hero">
-            <div className="inner-title-box reveal">
+            <div className="inner-title-box">
               <h1 className="hero-white-title">
                 {title}
                 <span className="italic none">Interior Blinds &amp; Shutters</span>

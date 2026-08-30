@@ -20,7 +20,7 @@ export function Header() {
             <div className="nav-content-wrap">
               <a aria-current="page" className="nav-logo-wrap inline-block" href="/">
                 <span className="site-brand header-site-brand">
-                  <img alt="" className="site-brand-image" decoding="async" height="36" src="/assets/logo.jpeg" width="36" />
+                  <img alt="" className="site-brand-image" decoding="async" height="36" src="/assets/logo-96.webp" width="36" />
                   <span className="site-brand-text">Interior Blinds &amp; Shutters</span>
                 </span>
               </a>
@@ -75,7 +75,7 @@ export function Header() {
           <div className="close-menu-wrap">
             <div className="nav-menu-logo-box">
               <span className="site-brand menu-site-brand">
-                <img alt="" className="site-brand-image" decoding="async" height="42" src="/assets/logo.jpeg" width="42" />
+                <img alt="" className="site-brand-image" decoding="async" height="42" src="/assets/logo-96.webp" width="42" />
                 <span className="site-brand-text">Interior Blinds &amp; Shutters</span>
               </span>
             </div>

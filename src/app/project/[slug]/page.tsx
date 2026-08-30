@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProject, getProjects } from "@/lib/content";
 import { MdxBody } from "@/components/ui/mdx-body";
@@ -47,7 +48,7 @@ export default async function ProjectDetailPage({
         <div className="container">
           <div className="single-hero-wrap">
             <div className="animation-content-wrap">
-              <div className="animation-content reveal">
+              <div className="animation-content">
                 <h1 className="single-title">{project.title}</h1>
               </div>
             </div>
@@ -58,7 +59,7 @@ export default async function ProjectDetailPage({
         <div className="container">
           <div className="project-single-wrap">
             <div className="project-single-image-box">
-              <img alt="" className="return-image" loading="lazy" src={project.mainImage} />
+              <Image alt="" className="return-image" height={1000} priority quality={76} sizes="100vw" src={project.mainImage} width={1600} />
               <div className="dashbord-image-overlay" />
             </div>
             <h2 className="discover-title reveal">{project.discover}</h2>
@@ -89,7 +90,7 @@ export default async function ProjectDetailPage({
                 <div className="gallery-image-grid">
                   {project.gallery.map((src, i) => (
                     <div className="gallery-image-box reveal" key={i}>
-                      <img alt="" className="gallery-image" loading="lazy" src={src} />
+                      <Image alt="" className="gallery-image" height={900} loading="lazy" quality={72} sizes="(max-width: 767px) 100vw, 33vw" src={src} width={900} />
                     </div>
                   ))}
                 </div>

@@ -2128,7 +2128,7 @@ blockquote {
 }
 .section.hero-background {
   z-index: 1;
-  background-image: url('../pic1.png');
+  background-image: url('../hero-poster.webp');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8658,7 +8658,7 @@ html:not(.js) .reveal-blur { filter: none; }
   isolation: isolate;
   min-height: 880px;
   overflow: hidden;
-  background-image: url("/assets/formbg.png");
+  background-image: url("/assets/contact-hero.webp");
   background-position: center;
   background-size: cover;
   color: #092653;
@@ -9024,7 +9024,7 @@ html:not(.js) .reveal-blur { filter: none; }
   display: grid;
   place-items: center;
   overflow: hidden;
-  background-image: url("/assets/formbg.png");
+  background-image: url("/assets/contact-hero.webp");
   background-position: center;
   background-size: cover;
 }

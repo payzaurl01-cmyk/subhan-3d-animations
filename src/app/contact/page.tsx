@@ -6,7 +6,7 @@ export default function ContactPage() {
       <section className="section inner-hero">
               <div className="container">
                 <div className="inner-title-wrap contact">
-                  <div className="inner-title-box is-contact reveal">
+                  <div className="inner-title-box is-contact">
                     <h1 className="hero-white-title">
                       Ready to transform
                       <span className="italic none">
@@ -14,7 +14,7 @@ export default function ContactPage() {
                       </span>
                     </h1>
                   </div>
-                  <div className="inner-button-box reveal">
+                  <div className="inner-button-box">
                     <a className="primary-button inline-block" href="#contact-quote-form">
                       <div className="primary-button-content">
                         <div className="primary-button-text-wrap">
@@ -31,7 +31,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="visual-wrap">
-                <img alt="" className="visual" loading="lazy" src="/assets/formbg.png" />
+                <img alt="" className="visual" decoding="async" fetchPriority="high" src="/assets/contact-hero.webp" />
                 <div className="visual-overlay">
                 </div>
               </div>

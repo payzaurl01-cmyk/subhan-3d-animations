@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getBlogPost, getBlogPosts } from "@/lib/content";
 import { MdxBody } from "@/components/ui/mdx-body";
@@ -40,7 +41,7 @@ export default async function BlogPostPage({
           <div className="blog-single-hero-wrap">
             <div className="blog-single-hero-title-box">
               <div className="animation-content-wrap">
-                <div className="animation-content reveal">
+                <div className="animation-content">
                   <div className="title-flex">
                     <h1 className="blog-single-title">{post.title}</h1>
                   </div>
@@ -49,7 +50,7 @@ export default async function BlogPostPage({
             </div>
             <div className="blog-single-hero-button-box">
               <div className="animation-content-wrap">
-                <div className="animation-content reveal">
+                <div className="animation-content">
                   <div className="title-flex">
                     <a className="primary-button inline-block" href="/contact">
                       <div className="primary-button-text-wrap">
@@ -63,7 +64,7 @@ export default async function BlogPostPage({
             </div>
           </div>
           <div className="animation-content-wrap">
-            <div className="animation-content reveal">
+            <div className="animation-content">
               <div className="blog-single-author-flex">
                 <div className="blog-single-author-box">
                   <div className="secondary-text-regular">Published Date</div>
@@ -85,7 +86,7 @@ export default async function BlogPostPage({
       <section className="section blog-single-inner">
         <div className="container">
           <div className="blog-single-image-box">
-            <img alt="" className="return-image" loading="lazy" src={post.heroImage} />
+            <Image alt="" className="return-image" height={1000} priority quality={76} sizes="100vw" src={post.heroImage} width={1600} />
             <div className="dashbord-image-overlay" />
           </div>
           <div className="blog-post-wrap">
@@ -93,7 +94,7 @@ export default async function BlogPostPage({
           </div>
           {post.commonImage ? (
             <div className="blog-single-common-image-box">
-              <img alt="" className="return-image" loading="lazy" src={post.commonImage} />
+              <Image alt="" className="return-image" height={1000} loading="lazy" quality={74} sizes="100vw" src={post.commonImage} width={1600} />
               <div className="dashbord-image-overlay" />
             </div>
           ) : null}

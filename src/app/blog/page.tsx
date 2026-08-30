@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getBlogPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function BlogPage() {
     <main className="guides-page">
       <section className="guides-hero" aria-labelledby="guides-title">
         <div className="guides-shell guides-hero-grid">
-          <div className="guides-hero-content reveal">
+          <div className="guides-hero-content">
             <p className="guides-eyebrow">INTERIOR BLINDS &amp; SHUTTERS JOURNAL</p>
             <h1 id="guides-title" className="hero-white-title home-hero-title">
               Better light starts with
@@ -37,9 +38,13 @@ export default function BlogPage() {
               Explore the guides <span aria-hidden="true">↓</span>
             </a>
           </div>
-          <div className="guides-hero-media reveal">
-            <img
+          <div className="guides-hero-media">
+            <Image
               alt="Soft daylight filtering through beautifully fitted window furnishings"
+              fill
+              priority
+              quality={76}
+              sizes="(max-width: 767px) 100vw, 48vw"
               src="/assets/styled-windows/background.webp"
             />
             <div className="guides-hero-note">
@@ -55,7 +60,7 @@ export default function BlogPage() {
           <div className="guides-shell">
             <a className="guides-featured-card reveal" href={`/blog/${featuredPost.slug}`}>
               <div className="guides-featured-image">
-                <img alt={featuredPost.title} src={featuredPost.heroImage} />
+                <Image alt={featuredPost.title} height={1000} quality={74} sizes="(max-width: 767px) 100vw, 62vw" src={featuredPost.heroImage} width={1400} />
               </div>
               <div className="guides-featured-content">
                 <p className="guides-card-category">FEATURED GUIDE · {featuredPost.readTime}</p>
@@ -102,7 +107,7 @@ export default function BlogPage() {
             {posts.map((post, index) => (
               <article className="guides-card reveal" data-cat={post.category} key={post.slug} role="listitem">
                 <a className="guides-card-image" href={`/blog/${post.slug}`}>
-                  <img alt={post.title} loading="lazy" src={post.cardImage} />
+                  <Image alt={post.title} height={1100} loading="lazy" quality={72} sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw" src={post.cardImage} width={900} />
                   <span>{String(index + 1).padStart(2, "0")}</span>
                 </a>
                 <div className="guides-card-meta">

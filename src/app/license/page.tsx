@@ -9,7 +9,7 @@ export default function LicensePage() {
                   <div className="uttlity-title-box">
                     <div className="title-box margin-none">
                       <div className="animation-content-wrap">
-                        <div className="animation-content reveal">
+                        <div className="animation-content">
                           <div className="title-flex">
                             <h1 className="utlitty-inner-title">
                               Licenses
