@@ -16,25 +16,35 @@ type GalleryProject = {
 };
 
 const projects: GalleryProject[] = [
-  { title: "Soft Light Living", location: "Sydney, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.47.jpeg", video: PROJECT_VIDEOS[1].src, shape: "landscape" },
-  { title: "Tailored Corner Finish", location: "North Sydney, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.52%20(1).jpeg", video: PROJECT_VIDEOS[2].src, shape: "landscape" },
-  { title: "Floor-to-Ceiling Privacy", location: "Parramatta, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.52.jpeg", shape: "tall" },
-  { title: "Calm Bedroom Retreat", location: "Chatswood, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.53.jpeg", shape: "portrait" },
-  { title: "Clean Architectural Lines", location: "Ryde, NSW", category: "Shutters", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.54%20(2).jpeg", video: PROJECT_VIDEOS[0].src, shape: "tall" },
-  { title: "Warm Neutral Layers", location: "Penrith, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.54.jpeg", video: PROJECT_VIDEOS[3].src, shape: "portrait" },
-  { title: "Effortless Light Control", location: "Castle Hill, NSW", category: "Shutters", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.55%20(1).jpeg", shape: "tall" },
-  { title: "Private Family Living", location: "Kellyville, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.55%20(2).jpeg", shape: "portrait" },
-  { title: "A Softer Outlook", location: "Hills District, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2012.55.55.jpeg", shape: "portrait" },
-  { title: "Modern Window Detail", location: "Blacktown, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.48.jpeg", shape: "tall" },
-  { title: "Quiet Comfort", location: "Baulkham Hills, NSW", category: "Shutters", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.49%20(1).jpeg", shape: "portrait" },
-  { title: "Layered Daylight", location: "Wentworthville, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.49%20(2).jpeg", shape: "portrait" },
-  { title: "Made for the Room", location: "Western Sydney, NSW", category: "Blinds", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.49.jpeg", shape: "tall" },
-  { title: "Open-Plan Elegance", location: "Sydney, NSW", category: "Curtains", image: "/assets/projects%20images/WhatsApp%20Image%202026-08-20%20at%2016.32.50.jpeg", video: PROJECT_VIDEOS[4].src, shape: "landscape" },
-  { title: "Motorised Bedroom Blinds", location: "Sydney, NSW", category: "Shutters", image: "/assets/styled-windows/motorised-blinds.webp", shape: "tall" },
-  { title: "Cooler, Calmer Rooms", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/styled-windows/cooler-rooms.webp", shape: "tall" },
-  { title: "Privacy, Beautifully Done", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/styled-windows/more-privacy.webp", shape: "tall" },
-  { title: "Balanced Natural Light", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/styled-windows/better-light-control.webp", shape: "tall" },
-  { title: "A Complete Window Story", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/styled-windows/background.webp", shape: "landscape" },
+  { title: "Soft Light Curtains", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/WhatsApp%20Image%202026-08-20%20at%2012.55.46.optimized.webp", video: PROJECT_VIDEOS[1].src, shape: "landscape" },
+  { title: "Light Filtering Roller Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/Light%20filtering%20roller%20blinds.optimized.webp", video: PROJECT_VIDEOS[2].src, shape: "landscape" },
+  { title: "PVC Plantation Shutters", location: "Sydney, NSW", category: "Shutters", image: "/assets/categories/Shutters/pvc%20plantataion%20shutters%202.optimized.webp", video: PROJECT_VIDEOS[0].src, shape: "tall" },
+  { title: "Tailored Curtain Finish", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/WhatsApp%20Image%202026-08-20%20at%2012.55.47%20(1).optimized.webp", video: PROJECT_VIDEOS[3].src, shape: "portrait" },
+  { title: "Modern Flyscreen", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/categories/Flyscreens/flyscreen.optimized.webp", video: PROJECT_VIDEOS[4].src, shape: "landscape" },
+  { title: "Acoustic Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/Acoustic.optimized.webp", shape: "portrait" },
+  { title: "Cassette Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/cassette%20blinds.optimized.webp", shape: "tall" },
+  { title: "Cassette Blinds Detail", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/cassette%20blinds%202.optimized.webp", shape: "portrait" },
+  { title: "Double Roller Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/double%20roller%20blinds.optimized.webp", shape: "landscape" },
+  { title: "Sliding Door Roller Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/sliding%20door%20roller%20blinds.optimized.webp", shape: "tall" },
+  { title: "Sliding Door Blinds Detail", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/sliding%20door%20roller%20blinds%202.optimized.webp", shape: "portrait" },
+  { title: "Venetian Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/venatation%20blinds.optimized.webp", shape: "portrait" },
+  { title: "Vertical Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/vertical%20blinds.optimized.webp", shape: "tall" },
+  { title: "Zebra Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/zebra%20blinds.optimized.webp", shape: "landscape" },
+  { title: "Custom Blinds Installation", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/WhatsApp%20Image%202026-08-20%20at%2012.55.49%20(1).optimized.webp", shape: "portrait" },
+  { title: "Contemporary Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/WhatsApp%20Image%202026-08-20%20at%2016.32.48.optimized.webp", shape: "tall" },
+  { title: "Made-to-Measure Blinds", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/WhatsApp%20Image%202026-08-20%20at%2016.32.49.optimized.webp", shape: "portrait" },
+  { title: "Blinds Installation Detail", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/WhatsApp%20Image%202026-08-20%20at%2016.32.49%20(1).optimized.webp", shape: "portrait" },
+  { title: "Complete Blinds Finish", location: "Sydney, NSW", category: "Blinds", image: "/assets/categories/Blinds/WhatsApp%20Image%202026-08-20%20at%2016.32.49%20(2).optimized.webp", shape: "tall" },
+  { title: "Elegant Curtains", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/WhatsApp%20Image%202026-08-20%20at%2012.55.47.optimized.webp", shape: "portrait" },
+  { title: "Curtain Installation", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/WhatsApp%20Image%202026-08-20%20at%2012.55.49.optimized.webp", shape: "tall" },
+  { title: "Floor-to-Ceiling Curtains", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/WhatsApp%20Image%202026-08-20%20at%2012.55.50.optimized.webp", shape: "landscape" },
+  { title: "Layered Curtain Finish", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/WhatsApp%20Image%202026-08-20%20at%2012.55.50%20(1).optimized.webp", shape: "portrait" },
+  { title: "Custom Curtain Project", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/WhatsApp%20Image%202026-08-21%20at%2001.55.39.optimized.webp", shape: "tall" },
+  { title: "Blockout Curtains", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/blockout%20curtains%202.optimized.webp", shape: "portrait" },
+  { title: "Blockout Curtain Detail", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/blockout%20curtains%202.webp", shape: "landscape" },
+  { title: "Curved Curtains", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/curvers%202.optimized.webp", shape: "tall" },
+  { title: "Sheer Curtains", location: "Sydney, NSW", category: "Curtains", image: "/assets/categories/Curtains/sheer%20curtains%202.optimized.webp", shape: "portrait" },
+  { title: "Flyscreens Detail", location: "Sydney, NSW", category: "Flyscreens", image: "/assets/categories/Flyscreens/flyscreen%202.optimized.webp", shape: "tall" },
 ];
 
 const categories = ["All", "Blinds", "Curtains", "Shutters", "Flyscreens"] as const;
@@ -67,7 +77,7 @@ function ProjectCardVideo({ project }: { project: GalleryProject }) {
       muted
       playsInline
       poster={project.image}
-      preload="metadata"
+      preload="none"
       ref={videoRef}
       src={project.video}
     />

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
 type ProductDetail = {
@@ -317,7 +318,14 @@ export default function ProductExplorer({ initialProduct }: { initialProduct?: s
             role="tabpanel"
           >
             <div className="product-showcase-media" key={selectedImage}>
-              <img src={selectedImage} alt={selectedImageAlt} />
+              <Image
+                alt={selectedImageAlt}
+                fill
+                priority
+                quality={74}
+                sizes="(max-width: 991px) 100vw, 52vw"
+                src={selectedImage}
+              />
               <div className="product-image-badge"><span>Made</span> to measure</div>
             </div>
 

@@ -5,14 +5,14 @@ export default function Page404Page() {
     <>
       <div className="utility-page-wrap">
             <div className="utility-page-content">
-              <img alt="" className="error-image reveal" src="/assets/images/404.svg" />
-              <h1 className="error-title reveal">
+              <img alt="" className="error-image" src="/assets/images/404.svg" />
+              <h1 className="error-title">
                 This template didn’t load!
               </h1>
-              <p className="error-description reveal">
+              <p className="error-description">
                 The page you are looking seems deleted or doesn’t exit anymore
               </p>
-              <div className="error-button-wrap reveal">
+              <div className="error-button-wrap">
                 <a className="primary-button inline-block" href="/">
                   <div className="primary-button-text-wrap">
                     <div className="primary-button-text">

@@ -12,15 +12,15 @@ export default function ProjectPage() {
     <main className="all-projects-page">
       <section className="all-projects-hero">
         <div className="all-projects-shell">
-          <p className="all-projects-eyebrow reveal">SYDNEY &amp; SURROUNDS</p>
-          <h1 className="all-projects-title reveal">
+          <p className="all-projects-eyebrow">SYDNEY &amp; SURROUNDS</p>
+          <h1 className="all-projects-title">
             Homes we’ve <em>transformed.</em>
           </h1>
           <div className="all-projects-intro-row">
-            <p className="all-projects-intro reveal">
+            <p className="all-projects-intro">
               Every project is measured, made and installed by us. Explore considered window solutions created for real Sydney homes.
             </p>
-            <div className="all-projects-stats reveal" aria-label="Project highlights">
+            <div className="all-projects-stats" aria-label="Project highlights">
               <div><strong>600+</strong><span>INSTALLS COMPLETED</span></div>
               <div><strong>5★</strong><span>CUSTOMER RATING</span></div>
             </div>

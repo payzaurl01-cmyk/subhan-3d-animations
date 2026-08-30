@@ -20,7 +20,7 @@ export function BeforeAfterSlider() {
         priority
         quality={82}
         sizes="(max-width: 991px) 100vw, 58vw"
-        src="/assets/project-feature/australian-home-before.png"
+        src="/assets/project-feature/australian-home-before.webp"
       />
 
       <div className="before-after-layer">
@@ -31,7 +31,7 @@ export function BeforeAfterSlider() {
           priority
           quality={82}
           sizes="(max-width: 991px) 100vw, 58vw"
-          src="/assets/project-feature/australian-home-after.png"
+          src="/assets/project-feature/australian-home-after.webp"
         />
       </div>
 

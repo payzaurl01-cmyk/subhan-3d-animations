@@ -76,13 +76,13 @@ export default function PricingPage() {
       <section className="section inner-hero">
         <div className="container">
           <div className="inner-title-wrap inner-hero">
-            <div className="inner-title-box is-pricing reveal">
+            <div className="inner-title-box is-pricing">
               <h1 className="hero-white-title">
                 Simple pricing that helps you
                 <span className="italic none">to stand for your project</span>
               </h1>
             </div>
-            <div className="inner-button-box reveal">
+            <div className="inner-button-box">
               <a className="primary-button inline-block" href="/contact">
                 <div className="primary-button-text-wrap">
                   <div className="primary-button-text">GET IN TOUCH</div>
@@ -96,7 +96,8 @@ export default function PricingPage() {
           <img
             alt=""
             className="visual"
-            loading="lazy"
+            fetchPriority="high"
+            loading="eager"
             sizes="(max-width: 5760px) 100vw, 5760px"
             src="/assets/images/Pricing-Banner-Image.webp"
             srcSet="/assets/images/Pricing-Banner-Image-p-500.webp 500w, /assets/images/Pricing-Banner-Image-p-800.webp 800w, /assets/images/Pricing-Banner-Image-p-1080.webp 1080w, /assets/images/Pricing-Banner-Image-p-1600.webp 1600w, /assets/images/Pricing-Banner-Image-p-2000.webp 2000w, /assets/images/Pricing-Banner-Image-p-2600.webp 2600w, /assets/images/Pricing-Banner-Image-p-3200.webp 3200w, /assets/images/Pricing-Banner-Image.webp 5760w"

@@ -538,11 +538,26 @@ export function NuvoraScripts() {
 
     /* ------------------------------------------------------------------ video */
     function initVideo() {
-      $$<HTMLVideoElement>("video").forEach((v) => {
-        v.muted = true;
-        const p = v.play();
-        if (p && p.catch) p.catch(() => {});
+      const videos = $$<HTMLVideoElement>("video[data-viewport-autoplay]");
+      if (!videos.length || !("IntersectionObserver" in window)) return () => {};
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target as HTMLVideoElement;
+            if (entry.isIntersecting) void video.play().catch(() => undefined);
+            else video.pause();
+          });
+        },
+        { rootMargin: "300px 0px", threshold: 0.05 },
+      );
+
+      videos.forEach((video) => {
+        video.muted = true;
+        observer.observe(video);
       });
+
+      return () => observer.disconnect();
     }
 
     /* ============================================================ CART (LS) */
@@ -769,7 +784,7 @@ export function NuvoraScripts() {
     initBlogFilter();
     initChecks();
     initForms();
-    initVideo();
+    const destroyVideo = initVideo();
     initCart();
     initCheckout();
     return () => {
@@ -778,6 +793,7 @@ export function NuvoraScripts() {
       destroyMotionPerformance();
       destroyFaqHover();
       destroyHomeownerCounters();
+      destroyVideo();
     };
   }, []);
 

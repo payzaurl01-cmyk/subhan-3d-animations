@@ -26,21 +26,51 @@ const CONTENT_IMAGE_SELECTOR = [
 
 export function ImageLoadingManager() {
   useEffect(() => {
+    const watchedSources = new WeakMap<HTMLImageElement, string>();
+
+    const removeLoaderIfReady = (image: HTMLImageElement) => {
+      const host = image.parentElement;
+      if (!host || host.querySelector("img.app-image-loading")) return;
+
+      host.querySelector(":scope > .app-image-loader")?.remove();
+      host.classList.remove("app-image-loader-host");
+    };
+
+    const addLoader = (image: HTMLImageElement) => {
+      const host = image.parentElement;
+      if (!host || host.querySelector(":scope > .app-image-loader")) return;
+
+      host.classList.add("app-image-loader-host");
+
+      const loader = document.createElement("span");
+      loader.className = "app-image-loader";
+      loader.setAttribute("aria-hidden", "true");
+      host.append(loader);
+    };
+
     const watchImage = (image: HTMLImageElement) => {
       if (!image.matches(CONTENT_IMAGE_SELECTOR)) return;
+
+      const sourceKey = `${image.getAttribute("src") ?? ""}|${image.getAttribute("srcset") ?? ""}`;
+      if (watchedSources.get(image) === sourceKey) return;
+      watchedSources.set(image, sourceKey);
 
       image.classList.remove("app-image-loaded");
 
       if (image.complete) {
         image.classList.remove("app-image-loading");
+        removeLoaderIfReady(image);
         return;
       }
 
       image.classList.add("app-image-loading");
+      addLoader(image);
 
       const finishLoading = () => {
+        if (watchedSources.get(image) !== sourceKey) return;
         image.classList.remove("app-image-loading");
         image.classList.add("app-image-loaded");
+        removeLoaderIfReady(image);
       };
 
       image.addEventListener("load", finishLoading, { once: true });

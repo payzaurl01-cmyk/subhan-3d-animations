@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getService, getServices } from "@/lib/content";
 import { MdxBody } from "@/components/ui/mdx-body";
@@ -38,7 +39,7 @@ export default async function ServiceDetailPage({
         <div className="container">
           <div className="single-hero-wrap service">
             <div className="animation-content-wrap">
-              <div className="animation-content reveal">
+              <div className="animation-content">
                 <h1 className="single-title">{service.title}</h1>
               </div>
             </div>
@@ -48,7 +49,7 @@ export default async function ServiceDetailPage({
       <section className="section full-padding-bottom">
         <div className="container">
           <div className="service-details-image-box">
-            <img alt="" className="return-image" loading="lazy" src={service.detailsImage} />
+            <Image alt="" className="return-image" height={1000} priority quality={76} sizes="100vw" src={service.detailsImage} width={1600} />
             <div className="dashbord-image-overlay" />
           </div>
           <div className="service-post-box reveal">

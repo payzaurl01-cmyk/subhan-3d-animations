@@ -17,7 +17,7 @@ export function Footer() {
                       decoding="async"
                       height="42"
                       loading="lazy"
-                      src="/assets/logo.jpeg"
+                      src="/assets/logo-96.webp"
                       width="42"
                     />
                     <span className="site-brand-text">Interior Blinds &amp; Shutters</span>
@@ -125,14 +125,14 @@ export function Footer() {
           <div className="footer-image-box">
             <video
               aria-label="Interior blinds and shutters showcase"
-              autoPlay
               className="footer-image footer-video-media"
+              data-viewport-autoplay
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="none"
             >
-              <source src="/assets/hero-blinds.mp4" type="video/mp4" />
+              <source src="/assets/footer-showcase.m4v" type="video/mp4" />
             </video>
           </div>
         </div>

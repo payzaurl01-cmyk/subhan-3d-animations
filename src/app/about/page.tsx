@@ -35,13 +35,13 @@ export default function AboutPage() {
       <section className="section inner-hero-about">
         <div className="container">
           <div className="inner-title-wrap inner-hero">
-            <div className="inner-title-box is-hero-about reveal">
+            <div className="inner-title-box is-hero-about">
               <h1 className="hero-white-title">
                 Window furnishings made
                 <span className="italic none">for the way you live.</span>
               </h1>
             </div>
-            <div className="inner-button-box reveal">
+            <div className="inner-button-box">
               <a className="primary-button inline-block" href="/contact">
                 <div className="primary-button-text-wrap">
                   <div className="primary-button-text">GET IN TOUCH</div>

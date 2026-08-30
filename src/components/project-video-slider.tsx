@@ -4,23 +4,23 @@ import { useEffect, useRef, useState } from "react";
 
 export const PROJECT_VIDEOS = [
   {
-    src: "/assets/WhatsApp%20Video%202026-08-20%20at%2012.56.06.mp4",
+    src: "/assets/WhatsApp%20Video%202026-08-20%20at%2012.56.06.optimized.m4v",
     title: "Made-to-measure finish",
   },
   {
-    src: "/assets/WhatsApp%20Video%202026-08-20%20at%2012.56.07.mp4",
+    src: "/assets/WhatsApp%20Video%202026-08-20%20at%2012.56.07.optimized.m4v",
     title: "Designed for the room",
   },
   {
-    src: "/assets/WhatsApp%20Video%202026-08-21%20at%2002.54.22.mp4",
+    src: "/assets/WhatsApp%20Video%202026-08-21%20at%2002.54.22.optimized.m4v",
     title: "Precision installation",
   },
   {
-    src: "/assets/WhatsApp%20Video%202026-08-21%20at%2002.54.22%20%281%29.mp4",
+    src: "/assets/WhatsApp%20Video%202026-08-21%20at%2002.54.22%20%281%29.optimized.m4v",
     title: "Light, privacy and comfort",
   },
   {
-    src: "/assets/WhatsApp%20Video%202026-08-21%20at%2002.54.22%20%282%29.mp4",
+    src: "/assets/WhatsApp%20Video%202026-08-21%20at%2002.54.22%20%282%29.optimized.m4v",
     title: "A beautifully finished space",
   },
 ] as const;
@@ -114,12 +114,11 @@ export function ProjectVideoSlider() {
                   <article className="project-video-card" key={`${groupIndex}-${project.src}`}>
                     <video
                       aria-label={project.title}
-                      autoPlay
                       className="project-video-media"
                       loop
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       ref={(video) => {
                         videoRefs.current[videoIndex] = video;
                       }}
