@@ -8,7 +8,20 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    url: "/",
+    title: "Interior Blinds & Shutters",
+    description:
+      "Transform your Sydney home with custom-made blinds, shutters, curtains and awnings designed for style, privacy and comfort. Enjoy expert advice, professional installation and a free measure and quote from a trusted local team.",
+    images: [
+      {
+        url: "/assets/images/social-share-branded.png",
+        width: 1731,
+        height: 909,
+        alt: "Interior Blinds & Shutters — Beautiful light. Better privacy.",
+      },
+    ],
+    siteName: "Interior Blinds & Shutters",
+    type: "website",
+    url: "https://interiorblindsandshutters.com.au",
   },
 };
 
