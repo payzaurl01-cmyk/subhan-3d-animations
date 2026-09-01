@@ -52,7 +52,7 @@ export default async function BlogPostPage({
               <div className="animation-content-wrap">
                 <div className="animation-content">
                   <div className="title-flex">
-                    <a className="primary-button inline-block" href="/contact">
+                    <a className="primary-button inline-block" href="/contact-us">
                       <div className="primary-button-text-wrap">
                         <div className="primary-button-text">GET IN TOUCH</div>
                         <div className="primary-button-hover-text">GET IN TOUCH</div>

@@ -86,7 +86,7 @@ export function Footer() {
                   <a aria-current="page" className="footer-menu" href="/">
                     Home
                   </a>
-                  <a className="footer-menu" href="/about">
+                  <a className="footer-menu" href="/about-us">
                     About Us
                   </a>
                   <a className="footer-menu" href="/products">

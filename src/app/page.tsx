@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { HomeQuoteSection } from "@/components/home-quote-section";
 import { ProjectVideoSlider } from "@/components/project-video-slider";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    url: "/",
+  },
+};
 
 export default function HomePage() {
   return (
@@ -183,7 +193,7 @@ export default function HomePage() {
                       <li><span aria-hidden="true">↗</span> Clear, itemised quotation</li>
                       <li><span aria-hidden="true">↗</span> Coordinated installation and aftercare</li>
                     </ul>
-                    <a className="window-story-link reveal" href="/contact">
+                    <a className="window-story-link reveal" href="/contact-us">
                       <span>How we work</span>
                       <span aria-hidden="true">↗</span>
                     </a>
@@ -391,7 +401,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="styled-windows-cards" role="list">
-                  <a className="styled-windows-card reveal" href="/contact" role="listitem">
+                  <a className="styled-windows-card reveal" href="/contact-us" role="listitem">
                     <span className="styled-windows-card-media">
                       <img
                         alt="Sheer curtains softly filtering daylight in a refined living room"
@@ -408,7 +418,7 @@ export default function HomePage() {
                     </span>
                   </a>
 
-                  <a className="styled-windows-card reveal" href="/contact" role="listitem">
+                  <a className="styled-windows-card reveal" href="/contact-us" role="listitem">
                     <span className="styled-windows-card-media">
                       <img
                         alt="White Venetian blinds controlling daylight in a modern dining room"
@@ -425,7 +435,7 @@ export default function HomePage() {
                     </span>
                   </a>
 
-                  <a className="styled-windows-card reveal" href="/contact" role="listitem">
+                  <a className="styled-windows-card reveal" href="/contact-us" role="listitem">
                     <span className="styled-windows-card-media">
                       <img
                         alt="Light-filtering cellular blinds above a softly upholstered sofa"
@@ -442,7 +452,7 @@ export default function HomePage() {
                     </span>
                   </a>
 
-                  <a className="styled-windows-card reveal" href="/contact" role="listitem">
+                  <a className="styled-windows-card reveal" href="/contact-us" role="listitem">
                     <span className="styled-windows-card-media">
                       <img
                         alt="Motorised roller blind in a warm contemporary bedroom"

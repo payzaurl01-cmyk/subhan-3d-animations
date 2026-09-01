@@ -394,11 +394,11 @@ export default function ProductExplorer({ initialProduct }: { initialProduct?: s
               </article>
 
               <div className="product-showcase-actions">
-                <a className="product-primary-cta" href="/contact">
+                <a className="product-primary-cta" href="/contact-us">
                   Book a free measure
                   <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                 </a>
-                <a className="product-text-cta" href="/contact">
+                <a className="product-text-cta" href="/contact-us">
                   View fabrics &amp; colours <span aria-hidden="true">↗</span>
                 </a>
               </div>

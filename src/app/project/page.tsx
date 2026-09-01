@@ -73,7 +73,7 @@ export default function ProjectPage() {
           </section>
           <div className="all-projects-bottom-cta reveal">
             <p>Have a window in mind?</p>
-            <a href="/contact">BOOK A FREE MEASURE &amp; QUOTE <span aria-hidden="true">↗</span></a>
+            <a href="/contact-us">BOOK A FREE MEASURE &amp; QUOTE <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>

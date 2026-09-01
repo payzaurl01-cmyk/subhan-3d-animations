@@ -83,7 +83,7 @@ export default function PricingPage() {
               </h1>
             </div>
             <div className="inner-button-box">
-              <a className="primary-button inline-block" href="/contact">
+              <a className="primary-button inline-block" href="/contact-us">
                 <div className="primary-button-text-wrap">
                   <div className="primary-button-text">GET IN TOUCH</div>
                   <div className="primary-button-hover-text">GET IN TOUCH</div>
