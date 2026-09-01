@@ -7770,6 +7770,10 @@ blockquote {
   }
   .nav-menu-wrapper {
     max-width: none;
+    height: auto;
+    max-height: 100%;
+    justify-content: flex-start;
+    overflow-y: auto;
   }
   .nav-social-wrap {
     grid-column-gap: 10px;
