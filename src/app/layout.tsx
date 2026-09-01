@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Nuvora is a modern template for sustainable architecture and real estate brands, featuring clean layouts, project showcases, and eco-focused storytelling to highlight green design, innovation, and responsible development.",
+    "Transform your Sydney home with custom-made blinds, shutters, curtains and awnings designed for style, privacy and comfort. Enjoy expert advice, professional installation and a free measure and quote from a trusted local team.",
 
   openGraph: {
     title: "Interior Blinds & Shutters",
     description:
-      "Nuvora is a modern template for sustainable architecture and real estate brands, featuring clean layouts, project showcases, and eco-focused storytelling.",
-    images: ["/assets/images/Social-share.webp"],
+      "Transform your Sydney home with custom-made blinds, shutters, curtains and awnings designed for style, privacy and comfort. Enjoy expert advice, professional installation and a free measure and quote from a trusted local team.",
+    images: ["/assets/images/social-share-branded.png"],
     type: "website",
   },
 
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Interior Blinds & Shutters",
     description:
-      "Nuvora is a modern template for sustainable architecture and real estate brands, featuring clean layouts, project showcases, and eco-focused storytelling.",
-    images: ["/assets/images/Social-share.webp"],
+      "Transform your Sydney home with custom-made blinds, shutters, curtains and awnings designed for style, privacy and comfort. Enjoy expert advice, professional installation and a free measure and quote from a trusted local team.",
+    images: ["/assets/images/social-share-branded.png"],
   },
 
   icons: {
