@@ -29,8 +29,8 @@ export function Header() {
                   <a aria-current={isActive("/") ? "page" : undefined} className="menu-link" href="/">
                     Home
                   </a>
-                  <a aria-current={isActive("/about") ? "page" : undefined} className="menu-link" href="/about">
-                    About
+                  <a aria-current={isActive("/about-us") ? "page" : undefined} className="menu-link" href="/about-us">
+                    About Us
                   </a>
                   <a aria-current={isActive("/products") ? "page" : undefined} className="menu-link" href="/products">
                     Products
@@ -41,8 +41,8 @@ export function Header() {
                   <a aria-current={isActive("/blog") ? "page" : undefined} className="menu-link" href="/blog">
                     Guides
                   </a>
-                  <a aria-current={isActive("/contact") ? "page" : undefined} className="menu-link" href="/contact">
-                    Contact
+                  <a aria-current={isActive("/contact-us") ? "page" : undefined} className="menu-link" href="/contact-us">
+                    Contact Us
                   </a>
                 </div>
               </div>
@@ -106,10 +106,10 @@ export function Header() {
                 </div>
               </div>
               <div className="single-nav-menu">
-                <a aria-current={isActive("/about") ? "page" : undefined} className="nav-link-wrap inline-block" href="/about">
+                <a aria-current={isActive("/about-us") ? "page" : undefined} className="nav-link-wrap inline-block" href="/about-us">
                   <div className="nav-link-texts">
-                    <div className="nav-link-text">ABOUT</div>
-                    <div className="nav-link-text">ABOUT</div>
+                    <div className="nav-link-text">ABOUT US</div>
+                    <div className="nav-link-text">ABOUT US</div>
                   </div>
                 </a>
                 <div className="nav-border">
@@ -154,13 +154,13 @@ export function Header() {
                 </div>
               </div>
               <div className="single-nav-menu">
-                <a aria-current={isActive("/contact") ? "page" : undefined} className="nav-link-wrap inline-block" href="/contact">
+                <a aria-current={isActive("/contact-us") ? "page" : undefined} className="nav-link-wrap inline-block" href="/contact-us">
                   <div className="nav-link-texts">
                     <div className="nav-link-text">
-                      CONTACT
+                      CONTACT US
                     </div>
                     <div className="nav-link-text">
-                      CONTACT
+                      CONTACT US
                     </div>
                   </div>
                 </a>
@@ -190,7 +190,17 @@ export function Header() {
                 </div>
               </div>
               <div className="nav-image-box">
-                <img alt="Modern two-story house with large glass windows, flat roofs, and a spacious green lawn with stepping stones." className="nav-image" loading="lazy" sizes="(max-width: 1140px) 100vw, 1140px, 100vw" src="/assets/images/nav-img.webp" srcSet="/assets/images/nav-img-p-500.webp 500w, /assets/images/nav-img-p-800.webp 800w, /assets/images/nav-img-p-1080.webp 1080w, /assets/images/nav-img.webp 1140w" />
+                <video
+                  aria-label="Interior blinds and shutters showcase"
+                  autoPlay
+                  className="nav-image nav-menu-video"
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src="/assets/footer-showcase.m4v" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>

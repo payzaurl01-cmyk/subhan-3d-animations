@@ -40,7 +40,7 @@ export function LegalPage({
               <span className="legal-document-label">Legal</span>
               <strong>{title}</strong>
               <span>Last updated<br />14 August 2026</span>
-              <a href="/contact">
+              <a href="/contact-us">
                 Questions? Contact us ↗
               </a>
             </aside>

@@ -5,7 +5,7 @@ import { ImageLoadingManager } from "@/components/image-loading-manager";
 import { SiteShell } from "@/components/layout/site-shell";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://Nuvora.vercel.app"),
+  metadataBase: new URL("https://interiorblindsandshutters.com.au"),
 
   title: {
     default: "Interior Blinds & Shutters",

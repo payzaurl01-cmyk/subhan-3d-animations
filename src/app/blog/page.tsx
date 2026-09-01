@@ -133,7 +133,7 @@ export default function BlogPage() {
             <h2 className="hero-white-title home-hero-title" >Let’s find the right fit.</h2>
           </div>
           <p>We’ll bring the samples, measure your windows and help you compare the best options in your space.</p>
-          <a href="/contact">Book a free measure <span aria-hidden="true">↗</span></a>
+          <a href="/contact-us">Book a free measure <span aria-hidden="true">↗</span></a>
         </div>
       </section>
     </main>

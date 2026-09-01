@@ -5730,6 +5730,12 @@ blockquote {
   position: relative;
   overflow: hidden;
 }
+.nav-menu-video {
+  width: 100%;
+  aspect-ratio: 1050 / 567;
+  object-fit: cover;
+  display: block;
+}
 .cart-container {
   background-color: var(--_colors---card-background);
   color: var(--_colors---white);
@@ -7735,6 +7741,16 @@ blockquote {
     grid-column-gap: 15px;
     grid-row-gap: 15px;
   }
+  .nav-menu-all-wrap {
+    height: auto;
+    justify-content: flex-start;
+  }
+  .nav-image-wrap {
+    margin-top: 20px;
+  }
+  .nav-social-wrap {
+    margin-top: 0;
+  }
   .nav-item-wrap {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
@@ -8501,7 +8517,7 @@ blockquote {
     display: none;
   }
   .nav-social-wrap {
-    margin-top: 60px;
+    margin-top: 0;
   }
   .nav-image {
     min-height: 150px;

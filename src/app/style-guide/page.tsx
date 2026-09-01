@@ -329,7 +329,7 @@ export default function StyleGuidePage() {
                       </div>
                       <div className="typography-button-box">
                         <div className="single-button-box reveal">
-                          <a className="primary-button inline-block" href="/contact">
+                          <a className="primary-button inline-block" href="/contact-us">
                             <div className="primary-button-text-wrap">
                               <div className="primary-button-text">
                                 GET IN TOUCH
@@ -339,7 +339,7 @@ export default function StyleGuidePage() {
                               </div>
                             </div>
                           </a>
-                          <a className="second-button inline-block" href="/contact">
+                          <a className="second-button inline-block" href="/contact-us">
                             <div className="project-button-content">
                               <div className="primary-button-text-wrap">
                                 <div className="primary-button-text">

@@ -45,6 +45,44 @@ export function ImageLoadingManager() {
       const loader = document.createElement("span");
       loader.className = "app-image-loader";
       loader.setAttribute("aria-hidden", "true");
+
+      const brandedLoader = document.createElement("span");
+      brandedLoader.className = "app-logo-loader";
+
+      const scene = document.createElement("span");
+      scene.className = "app-logo-loader-scene";
+
+      const orbitPrimary = document.createElement("span");
+      orbitPrimary.className = "app-logo-loader-orbit orbit-primary";
+
+      const orbitSecondary = document.createElement("span");
+      orbitSecondary.className = "app-logo-loader-orbit orbit-secondary";
+
+      const mark = document.createElement("span");
+      mark.className = "app-logo-loader-mark";
+
+      const logo = document.createElement("img");
+      logo.alt = "";
+      logo.decoding = "async";
+      logo.height = 64;
+      logo.src = "/assets/logo-96.webp";
+      logo.width = 64;
+
+      const shine = document.createElement("span");
+      shine.className = "app-logo-loader-shine";
+
+      const copy = document.createElement("span");
+      copy.className = "app-logo-loader-copy";
+      copy.textContent = "INTERIOR BLINDS & SHUTTERS";
+
+      const progress = document.createElement("span");
+      progress.className = "app-logo-loader-progress";
+      progress.append(document.createElement("i"));
+
+      mark.append(logo, shine);
+      scene.append(orbitPrimary, orbitSecondary, mark);
+      brandedLoader.append(scene, copy, progress);
+      loader.append(brandedLoader);
       host.append(loader);
     };
 

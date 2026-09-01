@@ -1,6 +1,6 @@
 import { ContactQuoteForm } from "@/components/contact-quote-form";
 
-export default function ContactPage() {
+export default function ContactUsPage() {
   return (
     <>
       <section className="section inner-hero">
