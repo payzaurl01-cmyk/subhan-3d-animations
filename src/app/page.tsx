@@ -56,7 +56,7 @@ export default function HomePage() {
               </div>
 
             </div>
-            <div className="hero-home-bottom">
+            {/* <div className="hero-home-bottom">
               <div className="hero-stats-card">
                 <div className="hero-stat">
                   <span className="hero-stat-value">4.9</span>
@@ -71,7 +71,7 @@ export default function HomePage() {
                   <span className="hero-stat-label">Made for every opening</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="visual-wrap">
