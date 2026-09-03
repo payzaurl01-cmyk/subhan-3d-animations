@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description:
     "Transform your Sydney home with custom-made blinds, shutters, curtains and awnings designed for style, privacy and comfort. Enjoy expert advice, professional installation and a free measure and quote from a trusted local team.",
 
+  verification: {
+    google: "VoGfS9smITVq3hQh2FiE1xTB0AFz8SnR8h7_bRRuyx0",
+  },
+
   openGraph: {
     title: "Interior Blinds & Shutters",
     description:
