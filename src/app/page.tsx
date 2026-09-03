@@ -43,8 +43,8 @@ export default function HomePage() {
               <div className="hero-actions">
                 <a className="primary-button inline-block" href="#home-quote-section">
                   <div className="primary-button-text-wrap">
-                    <div className="primary-button-text">Get a free measure &amp; quote</div>
-                    <div className="primary-button-hover-text">Get a free measure &amp; quote</div>
+                    <div className="primary-button-text">GET A FREE MEASURE &amp; QUOTE</div>
+                    <div className="primary-button-hover-text">GET A FREE MEASURE &amp; QUOTE</div>
                   </div>
                 </a>
                 <a className="hero-range-link" href="/products">
@@ -414,7 +414,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="styled-windows-cards" role="list">
-                  <a className="styled-windows-card reveal" href="/contact-us" role="listitem">
+                  <a className="styled-windows-card reveal"  role="listitem">
                     <span className="styled-windows-card-media">
                       <img
                         alt="Sheer curtains softly filtering daylight in a refined living room"
@@ -431,7 +431,7 @@ export default function HomePage() {
                     </span>
                   </a>
 
-                  <a className="styled-windows-card reveal" href="/contact-us" role="listitem">
+                  <a className="styled-windows-card reveal"  role="listitem">
                     <span className="styled-windows-card-media">
                       <img
                         alt="White Venetian blinds controlling daylight in a modern dining room"
@@ -448,7 +448,7 @@ export default function HomePage() {
                     </span>
                   </a>
 
-                  <a className="styled-windows-card reveal" href="/contact-us" role="listitem">
+                  <a className="styled-windows-card reveal"  role="listitem">
                     <span className="styled-windows-card-media">
                       <img
                         alt="Light-filtering cellular blinds above a softly upholstered sofa"
@@ -465,7 +465,7 @@ export default function HomePage() {
                     </span>
                   </a>
 
-                  <a className="styled-windows-card reveal" href="/contact-us" role="listitem">
+                  <a className="styled-windows-card reveal"  role="listitem">
                     <span className="styled-windows-card-media">
                       <img
                         alt="Motorised roller blind in a warm contemporary bedroom"
