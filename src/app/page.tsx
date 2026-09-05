@@ -5,7 +5,7 @@ import { ProjectVideoSlider } from "@/components/project-video-slider";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/",
+    canonical: "https://www.interiorblindsandshutters.com.au/",
   },
   openGraph: {
     title: "Interior Blinds & Shutters",
@@ -530,7 +530,7 @@ export default function HomePage() {
                         <span>Google Rating</span>
                       </div>
                       <div className="why-homeowners-cell why-homeowners-stat reveal">
-                        <strong data-count-suffix="+" data-count-to="500">500+</strong>
+                        <strong data-count-suffix="+" data-count-to="800">800+</strong>
                         <span>Homes Completed</span>
                       </div>
                       <div className="why-homeowners-cell why-homeowners-stat reveal">
@@ -538,7 +538,7 @@ export default function HomePage() {
                         <span>Years Experience</span>
                       </div>
                       <div className="why-homeowners-cell why-homeowners-stat reveal">
-                        <strong data-count-suffix="+" data-count-to="1500">1,500+</strong>
+                        <strong data-count-suffix="+" data-count-to="3000">3,000+</strong>
                         <span>Windows Fitted</span>
                       </div>
                     </div>
