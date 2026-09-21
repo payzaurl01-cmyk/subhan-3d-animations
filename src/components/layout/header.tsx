@@ -9,7 +9,11 @@ export function Header() {
   // The adaptive logo: the dark home hero keeps the white logo (.v1); every other
   // (light-background) page adds `nav-on-light` so the black logo (.v2) shows.
   const pathname = usePathname();
-  const navbarClass = pathname === "/" ? "navbar" : "navbar nav-on-light";
+  const navbarClass = pathname === "/"
+    ? "navbar"
+    : pathname === "/products"
+      ? "navbar nav-on-light products-navbar"
+      : "navbar nav-on-light";
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
   return (
@@ -81,7 +85,7 @@ export function Header() {
             </div>
             <div className="hamburger-menu close">
               <div className="hamburger-text-two">
-                &#123;CLOSE&#125;
+                X
               </div>
             </div>
           </div>
