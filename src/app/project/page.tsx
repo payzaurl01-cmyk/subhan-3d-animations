@@ -33,7 +33,7 @@ export default function ProjectPage() {
           <div className="all-projects-feature reveal">
             <div className="all-projects-feature-copy">
               <p>FEATURED INSTALLATION</p>
-              <h2 className="hero-white-title "> Made for the way you live.</h2>
+              <h2 className="hero-white-title">Made for the way you <em>live.</em></h2>
               <span>From soft filtered daylight to complete privacy, every detail is chosen to make the room feel calmer, more comfortable and beautifully finished.</span>
             </div>
             <BeforeAfterSlider />

@@ -112,7 +112,7 @@ export function Footer() {
             <h2 className="footer-title">Beautiful light.</h2>
             <div className="footer-title-flex">
               <h2 className="footer-title">Better</h2>
-              <a className="get-box inline-block" href="#home-quote-section">
+              <a className="get-box inline-block" href="/contact-us">
                 <div className="sami-description">BOOK A FREE MEASURE</div>
               </a>
               <h2 className="footer-title">Privacy.</h2>
