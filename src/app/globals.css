@@ -4231,9 +4231,21 @@ html {
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 767px) {
+  .header .navbar .nav-logo-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .navbar .site-brand-text,
   .header .navbar.products-navbar .site-brand-text {
-    font-size: clamp(14px, 3.8vw, 16px);
+    font-size: clamp(17px, 5.4vw, 24px);
+    line-height: 1;
+  }
+
+  .section.footer .footer-site-brand .site-brand-text {
+    font-size: clamp(21px, 5.5vw, 26px);
+    line-height: 1.1;
   }
 }
 
