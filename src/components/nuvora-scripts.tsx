@@ -14,6 +14,10 @@ import { useEffect } from "react";
  */
 export function NuvoraScripts() {
   useEffect(() => {
+    // Every listener registered below is tied to this signal, so unmounting (or
+    // React Strict Mode's double effect run) never leaves duplicate handlers behind.
+    const listeners = new AbortController();
+    const { signal } = listeners;
     const $ = <T extends Element = Element>(s: string, c?: ParentNode): T | null =>
       (c || document).querySelector<T>(s);
     const $$ = <T extends Element = Element>(s: string, c?: ParentNode): T[] =>
@@ -24,7 +28,9 @@ export function NuvoraScripts() {
       fn: EventListenerOrEventListenerObject,
       o?: boolean | AddEventListenerOptions,
     ) => {
-      if (el) el.addEventListener(ev, fn, o);
+      if (!el) return;
+      const options = typeof o === "boolean" ? { capture: o } : o;
+      el.addEventListener(ev, fn, { ...options, signal });
     };
 
     /* -------------------------------------------------------------- reveal */
@@ -140,6 +146,28 @@ export function NuvoraScripts() {
       );
       observer.observe(statsCard);
       return () => observer.disconnect();
+    }
+
+    /* Pause every CSS animation inside page sections that are off screen.
+       Looping decorative animations (marquees, orbits, floating cards) otherwise
+       keep repainting while invisible, which makes scrolling janky on phones.
+       They resume as soon as the section approaches the viewport. */
+    function initOffscreenAnimationPause() {
+      const sections = $$<HTMLElement>("main section");
+      if (!sections.length || !("IntersectionObserver" in window)) return () => {};
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle("is-offscreen-paused", !entry.isIntersecting);
+          });
+        },
+        { rootMargin: "200px 0px" },
+      );
+      sections.forEach((section) => observer.observe(section));
+      return () => {
+        observer.disconnect();
+        sections.forEach((section) => section.classList.remove("is-offscreen-paused"));
+      };
     }
 
     /* ------------------------------------------ homepage FAQ hover accordion */
@@ -292,7 +320,7 @@ export function NuvoraScripts() {
           }
         }, 120);
       }
-      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("scroll", onScroll, { passive: true, signal });
       roll();
     }
 
@@ -405,6 +433,10 @@ export function NuvoraScripts() {
         '<div class="nv-lightbox-stage"></div>' +
         '<button class="nv-lightbox-nav nv-lightbox-next" data-lb-next aria-label="Next">&#8250;</button>';
       document.body.appendChild(box);
+      signal.addEventListener("abort", () => {
+        box.remove();
+        document.body.classList.remove("nav-open");
+      });
       const stage = $<HTMLElement>(".nv-lightbox-stage", box)!;
 
       let group: HTMLAnchorElement[] = [];
@@ -700,7 +732,7 @@ export function NuvoraScripts() {
             m.setAttribute("aria-hidden", "true");
           });
         }
-      });
+      }, { signal });
       Cart.render();
     }
     (window as unknown as { NuvoraCart: typeof Cart }).NuvoraCart = Cart;
@@ -775,6 +807,7 @@ export function NuvoraScripts() {
     const destroyReveal = initReveal();
     const destroyWindowStoryScroll = initWindowStoryScroll();
     const destroyMotionPerformance = initMotionPerformance();
+    const destroyOffscreenAnimationPause = initOffscreenAnimationPause();
     const destroyFaqHover = initFaqHover();
     initNav();
     initTabs();
@@ -788,9 +821,11 @@ export function NuvoraScripts() {
     initCart();
     initCheckout();
     return () => {
+      listeners.abort();
       destroyReveal();
       destroyWindowStoryScroll();
       destroyMotionPerformance();
+      destroyOffscreenAnimationPause();
       destroyFaqHover();
       destroyHomeownerCounters();
       destroyVideo();
