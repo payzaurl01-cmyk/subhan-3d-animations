@@ -16,6 +16,10 @@ type Product = ProductDetail & {
   slug: string;
   image: string;
   imageAlt: string;
+  /** Optional hero/intro overrides so a product can have its own heading. */
+  headline?: string;
+  script?: string;
+  intro?: string;
 };
 
 type Category = {
@@ -71,6 +75,9 @@ const CATEGORIES: Category[] = [
       {
         slug: "vertical-blinds",
         name: "Vertical Blinds",
+        headline: "Vertical blinds, made for wide openings.",
+        script: "Effortless light and privacy across every glass door.",
+        intro: "Made-to-measure vertical blinds glide smoothly across large windows and sliding doors. Rotate the vanes to direct daylight, soften glare and keep your space private.",
         short: "Ideal for wide openings",
         description: "Vertical blinds glide neatly across large windows and doors, with rotating vanes that make privacy and light simple to adjust.",
         image: "https://i.postimg.cc/dtmSk4YR/vertical-blinds-2.png",
@@ -174,6 +181,9 @@ const CATEGORIES: Category[] = [
       {
         slug: "luxx-shades",
         name: "Luxx Shades",
+        headline: "Luxx shades, softly sculpted.",
+        script: "A flowing, refined finish for your feature windows.",
+        intro: "Luxx shades bring a soft, sculpted silhouette to feature and curved windows. Each shade is custom made for flexible privacy, gentle light control and a polished finish.",
         short: "A refined soft finish",
         description: "Luxx shades bring a smooth, flowing silhouette to feature windows with flexible privacy and a polished custom finish.",
         image: "https://i.postimg.cc/wTdGjnSd/curvers-1.jpg",
@@ -255,6 +265,9 @@ export default function ProductExplorer({ initialProduct }: { initialProduct?: s
   const selectedProduct = selectedType === "secondary" && secondaryProduct ? secondaryProduct : product;
   const selectedImage = selectedProduct.image ?? product.image;
   const selectedImageAlt = selectedProduct.imageAlt ?? product.imageAlt;
+  const heroHeadline = product.headline ?? category.headline;
+  const heroScript = product.script ?? category.script;
+  const panelIntro = product.intro ?? category.intro;
 
   const updateUrl = (slug: string) => {
     const url = new URL(window.location.href);
@@ -287,8 +300,8 @@ export default function ProductExplorer({ initialProduct }: { initialProduct?: s
       <section className="product-showcase-hero" aria-labelledby="products-heading">
         <div className="container product-showcase-hero-inner">
           <p className="product-showcase-breadcrumb">Products <span>/</span> {category.label}</p>
-          <h1 id="products-heading" key={category.headline}>{category.headline}</h1>
-          <p className="product-showcase-script" key={category.script}>{category.script}</p>
+          <h1 id="products-heading" key={heroHeadline}>{heroHeadline}</h1>
+          <p className="product-showcase-script" key={heroScript}>{heroScript}</p>
         </div>
       </section>
 
@@ -335,7 +348,7 @@ export default function ProductExplorer({ initialProduct }: { initialProduct?: s
                 <div>
                   <p className="product-panel-eyebrow">Our {category.label}</p>
                   <h2>{category.label}</h2>
-                  <p>{category.intro}</p>
+                  <p>{panelIntro}</p>
                 </div>
               </div>
 

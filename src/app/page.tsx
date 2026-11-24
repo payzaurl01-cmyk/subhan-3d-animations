@@ -79,6 +79,7 @@ export default function HomePage() {
             aria-hidden="true"
             autoPlay
             className="visual hero-background-image hero-background-video"
+            data-viewport-autoplay
             loop
             muted
             playsInline
@@ -105,7 +106,7 @@ export default function HomePage() {
                     </p>
                   </div>
                   <div className="window-collection-grid">
-                    <a className="window-product-card reveal" href="/product/roller-blinds">
+                    <a className="window-product-card reveal" href="/products?product=roller-blinds">
                       <Image alt="Roller blinds installed in a bright window" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/productstoWEBP/roller%20blinds%20blockout_1.webp" width={1254} />
                       <span className="window-card-number">01</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
@@ -114,7 +115,7 @@ export default function HomePage() {
                         <span className="window-card-text">Clean-lined blockout, sunscreen and light-filtering options for every room.</span>
                       </span>
                     </a>
-                    <a className="window-product-card reveal" href="/product/blockout-curtains">
+                    <a className="window-product-card reveal" href="/products?product=vertical-blinds">
                       <Image alt="Light filtering roller blinds softly diffusing daylight" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/productstoWEBP/vertical%20blinds%202.webp" width={1254} />
                       <span className="window-card-number">02</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
@@ -123,7 +124,7 @@ export default function HomePage() {
                         <span className="window-card-text">Soft daylight control that keeps rooms calm, private and beautifully bright.</span>
                       </span>
                     </a>
-                    <a className="window-product-card reveal" href="/product/pvc-plantation-shutters">
+                    <a className="window-product-card reveal" href="/products?product=blockout-curtains">
                       <Image alt="Dark blockout roller blinds in a modern room" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/productstoWEBP/blockout curtains.webp" width={1254} />
                       <span className="window-card-number">03</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
@@ -132,7 +133,7 @@ export default function HomePage() {
                         <span className="window-card-text">A polished finish for bedrooms, media rooms and spaces that need full privacy.</span>
                       </span>
                     </a>
-                    <a className="window-product-card reveal" href="/product/curvers">
+                    <a className="window-product-card reveal" href="/products?product=pvc-plantation-shutters">
                       <Image alt="Large roller blinds fitted across sliding doors" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/productstoWEBP/pvc plantataion shutters.webp" width={1254} />
                       <span className="window-card-number">04</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
@@ -141,7 +142,7 @@ export default function HomePage() {
                         <span className="window-card-text">Practical, made-to-measure coverage for wide openings and everyday living.</span>
                       </span>
                     </a>
-                    <a className="window-product-card reveal" href="/product/vertical-blinds">
+                    <a className="window-product-card reveal" href="/products?product=luxx-shades">
                       <Image alt="Custom fitted cassette blinds in a bright bedroom" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/luxxshade.jpeg" width={1254} />
                       <span className="window-card-number">05</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>
@@ -150,7 +151,7 @@ export default function HomePage() {
                         <span className="window-card-text">Measured, made and installed neatly so every edge feels intentional.</span>
                       </span>
                     </a>
-                    <a className="window-product-card reveal" href="/product/flyscreens">
+                    <a className="window-product-card reveal" href="/products?product=flyscreens">
                       <Image alt="Blinds fitted across a large outdoor-facing doorway" className="window-product-image" height={1254} loading="lazy" quality={72} sizes="(max-width: 767px) calc(100vw - 34px), (max-width: 991px) 50vw, 33vw" src="/assets/flyscreen.jpeg" width={1254} />
                       <span className="window-card-number">06</span>
                       <span className="window-card-arrow" aria-hidden="true">↗</span>

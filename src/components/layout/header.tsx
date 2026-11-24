@@ -196,8 +196,8 @@ export function Header() {
               <div className="nav-image-box">
                 <video
                   aria-label="Interior blinds and shutters showcase"
-                  autoPlay
                   className="nav-image nav-menu-video"
+                  data-viewport-autoplay
                   loop
                   muted
                   playsInline

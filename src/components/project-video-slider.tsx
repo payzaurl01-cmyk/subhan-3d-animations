@@ -30,11 +30,34 @@ export function ProjectVideoSlider() {
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
   const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isOnScreen, setIsOnScreen] = useState(false);
+  const [isPageVisible, setIsPageVisible] = useState(true);
+
+  // Only run the auto-scroll loop while the slider is visible and the tab is active.
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const observer = new IntersectionObserver(([entry]) => setIsOnScreen(entry.isIntersecting));
+    observer.observe(viewport);
+
+    const syncPageVisibility = () => setIsPageVisible(document.visibilityState === "visible");
+    syncPageVisibility();
+    document.addEventListener("visibilitychange", syncPageVisibility);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", syncPageVisibility);
+    };
+  }, []);
 
   useEffect(() => {
     const viewport = viewportRef.current;
     if (!viewport) return;
 
+    // Observe against the page viewport (not the scroller) so videos only play
+    // when they are actually on screen; clipping by the horizontal scroller is
+    // still applied, so off-track cards stay paused too.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,7 +66,7 @@ export function ProjectVideoSlider() {
           else video.pause();
         });
       },
-      { root: viewport, threshold: 0.35 },
+      { threshold: 0.35 },
     );
 
     videoRefs.current.forEach((video) => {
@@ -55,7 +78,13 @@ export function ProjectVideoSlider() {
 
   useEffect(() => {
     const viewport = viewportRef.current;
-    if (!viewport || isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      !viewport ||
+      isPaused ||
+      !isOnScreen ||
+      !isPageVisible ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
       return;
     }
 
@@ -75,7 +104,7 @@ export function ProjectVideoSlider() {
 
     frame = requestAnimationFrame(move);
     return () => cancelAnimationFrame(frame);
-  }, [isPaused]);
+  }, [isPaused, isOnScreen, isPageVisible]);
 
   useEffect(() => {
     return () => {
@@ -100,6 +129,7 @@ export function ProjectVideoSlider() {
         className="project-video-viewport"
         onMouseLeave={resumeAfterInteraction}
         onMouseMove={pauseForInteraction}
+        onPointerCancel={resumeAfterInteraction}
         onPointerDown={pauseForInteraction}
         onPointerUp={resumeAfterInteraction}
         ref={viewportRef}

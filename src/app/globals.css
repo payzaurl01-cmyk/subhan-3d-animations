@@ -4962,6 +4962,24 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* Sections scrolled out of view pause their animations (see NuvoraScripts). */
+.is-offscreen-paused,
+.is-offscreen-paused::before,
+.is-offscreen-paused::after,
+.is-offscreen-paused *,
+.is-offscreen-paused *::before,
+.is-offscreen-paused *::after {
+  animation-play-state: paused !important;
+}
+
+/* Off-screen loaders are paused by ImageLoadingManager to save mobile CPU/GPU. */
+.app-image-loader.is-paused,
+.app-image-loader.is-paused::before,
+.app-image-loader.is-paused::after,
+.app-image-loader.is-paused * {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .app-image-loader::before,
   .app-logo-loader-scene,

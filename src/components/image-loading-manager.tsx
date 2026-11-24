@@ -28,11 +28,27 @@ export function ImageLoadingManager() {
   useEffect(() => {
     const watchedSources = new WeakMap<HTMLImageElement, string>();
 
+    // Pause loader animations while off screen. Lazy images below the fold can keep
+    // their loader for a long time, and dozens of looping animations at once
+    // overwhelm mobile devices.
+    const loaderVisibility =
+      "IntersectionObserver" in window
+        ? new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              entry.target.classList.toggle("is-paused", !entry.isIntersecting);
+            });
+          })
+        : null;
+
     const removeLoaderIfReady = (image: HTMLImageElement) => {
       const host = image.parentElement;
       if (!host || host.querySelector("img.app-image-loading")) return;
 
-      host.querySelector(":scope > .app-image-loader")?.remove();
+      const loader = host.querySelector(":scope > .app-image-loader");
+      if (loader) {
+        loaderVisibility?.unobserve(loader);
+        loader.remove();
+      }
       host.classList.remove("app-image-loader-host");
     };
 
@@ -43,7 +59,7 @@ export function ImageLoadingManager() {
       host.classList.add("app-image-loader-host");
 
       const loader = document.createElement("span");
-      loader.className = "app-image-loader";
+      loader.className = loaderVisibility ? "app-image-loader is-paused" : "app-image-loader";
       loader.setAttribute("aria-hidden", "true");
 
       const brandedLoader = document.createElement("span");
@@ -84,9 +100,14 @@ export function ImageLoadingManager() {
       brandedLoader.append(scene, copy, progress);
       loader.append(brandedLoader);
       host.append(loader);
+      loaderVisibility?.observe(loader);
     };
 
     const watchImage = (image: HTMLImageElement) => {
+      // Never watch the loader's own logo image. Descendant selectors such as
+      // ".product-showcase-media img" also match it, which would nest loaders
+      // inside loaders forever and freeze the page.
+      if (image.closest(".app-image-loader")) return;
       if (!image.matches(CONTENT_IMAGE_SELECTOR)) return;
 
       const sourceKey = `${image.getAttribute("src") ?? ""}|${image.getAttribute("srcset") ?? ""}`;
@@ -126,6 +147,7 @@ export function ImageLoadingManager() {
 
         mutation.addedNodes.forEach((node) => {
           if (!(node instanceof Element)) return;
+          if (node.classList.contains("app-image-loader")) return;
           if (node instanceof HTMLImageElement) watchImage(node);
           node.querySelectorAll<HTMLImageElement>(CONTENT_IMAGE_SELECTOR).forEach(watchImage);
         });
@@ -139,7 +161,10 @@ export function ImageLoadingManager() {
       subtree: true,
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      loaderVisibility?.disconnect();
+    };
   }, []);
 
   return null;
